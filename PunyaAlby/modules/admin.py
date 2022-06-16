@@ -8,35 +8,33 @@
 
 import asyncio
 
-from pyrogram import filters
+from pyrogram import Client, filters
 from pyrogram.methods.chats.get_chat_members import Filters as ChatMemberFilters
 from pyrogram.types import ChatPermissions, Message
 
 from config import CMD_HANDLER as cmd
-from PunyaAlby import CMD_HELP, app
+from PunyaAlby.modules.help import *
 from PunyaAlby.helpers.adminhelpers import CheckAdmin
 from PunyaAlby.helpers.pyrohelper import get_arg, get_args
 
-CMD_HELP.update(
-    {
-        "admin": f"""
-『 **Admin Tools** 』
-  `{cmd}ban` -> Ban pengguna dari obrolan.
-  `{cmd}unban` -> Unban pengguna dari obrolan.
-  `{cmd}promote` [optional title] -> Promote pengguna sebagai admin grup.
-  `{cmd}demote` _> Menurunkan pengguna dari admin grup.
-  `{cmd}mute` -> Mute pengguna.
-  `{cmd}unmute` -> Unmute pengguna.
-  `{cmd}kick` -> Menendang keluar pengguna dari grup.
-  `{cmd}gmute` -> Tidak memungkinkan pengguna berbicara (bahkan admin).
-  `{cmd}ungmute` -> Kebalikan dari apa yang dilakukan gmute.
-  `{cmd}pin` -> Menyematkan Pesan.
-"""
-    }
+add_command_help(
+    "admin",
+    [
+        ["`{cmd}ban`", "Ban pengguna dari obrolan."],
+        ["`{cmd}unban`", "Unban pengguna dari obrolan."],
+        ["`{cmd}promote`", "-> Promote pengguna sebagai admin grup."],
+        ["`{cmd}demote`", _> Menurunkan pengguna dari admin grup."],
+        ["`{cmd}mute`", -> Mute pengguna."],
+        ["`{cmd}unmute`", -> Unmute pengguna."],
+        ["`{cmd}kick`", -> Menendang keluar pengguna dari grup."],
+        ["`{cmd}gmute`", -> Tidak memungkinkan pengguna berbicara (bahkan admin)."],
+        ["`{cmd}ungmute`", -> Kebalikan dari apa yang dilakukan gmute."],
+        ["`{cmd}pin`", -> Menyematkan Pesan.",
+        ],
+    ],
 )
 
-
-@app.on_message(filters.command("ban", cmd) & filters.me)
+@Client.on_message(filters.command("ban", cmd) & filters.me)
 async def ban_hammer(_, message: Message):
     if await CheckAdmin(message) is True:
         reply = message.reply_to_message
@@ -60,7 +58,7 @@ async def ban_hammer(_, message: Message):
         await message.edit("**Saya bukan admin disini**")
 
 
-@app.on_message(filters.command("unban", cmd) & filters.me)
+@Client.on_message(filters.command("unban", cmd) & filters.me)
 async def unban(_, message: Message):
     if await CheckAdmin(message) is True:
         reply = message.reply_to_message
@@ -84,7 +82,7 @@ async def unban(_, message: Message):
 # Mute Permissions
 
 
-@app.on_message(filters.command("mute", cmd) & filters.me)
+@Client.on_message(filters.command("mute", cmd) & filters.me)
 async def mute_hammer(_, message: Message):
     if await CheckAdmin(message) is True:
         reply = message.reply_to_message
@@ -112,7 +110,7 @@ async def mute_hammer(_, message: Message):
 # Unmute permissions
 
 
-@app.on_message(filters.command("unmute", cmd) & filters.me)
+@Client.on_message(filters.command("unmute", cmd) & filters.me)
 async def unmute(_, message: Message):
     if await CheckAdmin(message) is True:
         reply = message.reply_to_message
@@ -133,7 +131,7 @@ async def unmute(_, message: Message):
         await message.edit("**Saya bukan admin disini**")
 
 
-@app.on_message(filters.command("kick", cmd) & filters.me)
+@Client.on_message(filters.command("kick", cmd) & filters.me)
 async def kick_user(_, message: Message):
     if await CheckAdmin(message) is True:
         reply = message.reply_to_message
@@ -157,7 +155,7 @@ async def kick_user(_, message: Message):
         await message.edit("**Saya bukan admin disini**")
 
 
-@app.on_message(filters.command("pin", cmd) & filters.me)
+@Client.on_message(filters.command("pin", cmd) & filters.me)
 async def pin_message(_, message: Message):
     # First of all check if its a group or not
     if message.chat.type in ["group", "supergroup"]:
@@ -209,7 +207,7 @@ async def pin_message(_, message: Message):
     await message.delete()
 
 
-@app.on_message(filters.command("promote", cmd) & filters.me)
+@Client.on_message(filters.command("promote", cmd) & filters.me)
 async def promote(client, message: Message):
     if await CheckAdmin(message) is False:
         await message.edit("**Saya bukan admin disini.**")
@@ -242,7 +240,7 @@ async def promote(client, message: Message):
             pass
 
 
-@app.on_message(filters.command("demote", cmd) & filters.me)
+@Client.on_message(filters.command("demote", cmd) & filters.me)
 async def demote(client, message: Message):
     if await CheckAdmin(message) is False:
         await message.edit("**Saya bukan admin.**")
