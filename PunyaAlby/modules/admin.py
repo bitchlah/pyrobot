@@ -14,6 +14,7 @@ from pyrogram.types import ChatPermissions, Message
 
 from config import CMD_HANDLER as cmd
 from PunyaAlby.modules.help import *
+from PunyaAlby import HELP
 from PunyaAlby.helpers.adminhelpers import CheckAdmin
 from PunyaAlby.helpers.pyrohelper import get_arg, get_args
 
