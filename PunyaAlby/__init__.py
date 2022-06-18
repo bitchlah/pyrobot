@@ -28,6 +28,7 @@ LOOP = asyncio.get_event_loop_policy().get_event_loop()
 trl = Translator()
 aiosession = ClientSession()
 CMD_HELP = {}
+HELP: Dict[str, str] = {}
 scheduler = AsyncIOScheduler()
 StartTime = time.time()
 START_TIME = datetime.now()
