@@ -25,8 +25,10 @@ CMD_HELP.update(
     }
 )
 
-BL = get("https://raw.githubusercontent.com/BukanDev/Prime-Json/master/blgcast.json").json()
-
+GCAST_BLACKLIST = [
+    -1001638078842,  # ruangdiskusikami
+    -1001473548283,  # SharingUserbot
+]
 
 @Client.on_message(filters.command("gcast", ".") & filters.me)
 async def chat_broadcast(client, message):
@@ -46,7 +48,7 @@ async def chat_broadcast(client, message):
             "group",
         ]:
             chat = dialog.chat.id
-            if chat not in BL:
+            if chat not in GCAST_BLACKLIST:
                 try:
                     await msg.copy(chat)
                     sent = sent + 1
