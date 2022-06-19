@@ -4,14 +4,14 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from requests import get
 
-from config import PREFIX
+from config import CMD_HANDLER as cmd
 from PunyaAlby.modules.help import add_command_help
 
 add_command_help(
     "gcast",
     [
-        [" `{PREFIX}gcast` -> Kirim pesan ke group."],
-        ["`.{PREFIX}gucast` - > Kirim pesan ke private."],
+        [" `{cmd}gcast` -> Kirim pesan ke group."],
+        ["`.{cmd}gucast` - > Kirim pesan ke private."],
     ],
 )
 
@@ -20,7 +20,7 @@ BL = get(
 ).json()
 
 
-@Client.on_message(filters.command("gcast", PREFIX) & filters.me)
+@Client.on_message(filters.command("gcast", {cmd}) & filters.me)
 async def chat_broadcast(client, message):
     if message.reply_to_message:
         msg = message.reply_to_message
@@ -52,7 +52,7 @@ async def chat_broadcast(client, message):
     )
 
 
-@Client.on_message(filters.command("gucast", PREFIX) & filters.me)
+@Client.on_message(filters.command("gucast", {cmd}) & filters.me)
 async def chat_broadcast(client, message):
     if message.reply_to_message:
         msg = message.reply_to_message
