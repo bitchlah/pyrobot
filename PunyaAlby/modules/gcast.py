@@ -5,17 +5,14 @@ from pyrogram.types import Message
 from requests import get
 
 from config import CMD_HANDLER as cmd
-from PunyaAlby import CMD_HELP
+from PunyaAlby.help import add_command_help
 
-
-CMD_HELP.update(
-    {
-        "gcast": f"""
-『 **Broadcast** 』
-  `{cmd}gcast` -> Kirim pesan ke group.
-  `{cmd}gucast` - > Kirim pesan ke private.
-"""
-    }
+add_command_help(
+    "gcast",
+    [
+        [" `{cmd}gcast` -> Kirim pesan ke group."],
+        ["`{cmd}gucast` - > Kirim pesan ke private."],
+    ],
 )
 
 BL = get(
