@@ -25,9 +25,7 @@ CMD_HELP.update(
     }
 )
 
-BL = get(
-    "https://raw.githubusercontent.com/BukanDev/Prime-Json/master/blgcast.json"
-).json()
+BL = get("https://raw.githubusercontent.com/BukanDev/Prime-Json/master/blgcast.json").json()
 
 
 @Client.on_message(filters.command("gcast", ".") & filters.me)
