@@ -52,7 +52,7 @@ async def module_help(client: Client, message: Message):
     await message.delete()
 
 
-def add_command_help(module_name, commands):
+async def add_command_help(module_name, commands):
     """
     Adds a modules help information.
     :param module_name: name of the module
