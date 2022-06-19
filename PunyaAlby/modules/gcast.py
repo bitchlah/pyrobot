@@ -4,7 +4,15 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from requests import get
 
+from PunyaAlby.modules.help import add_command_help
 from PunyaAlby import CMD_HELP
+
+add_command_help(
+    "gcast",
+    [
+        [" `.gcast` -> Kirim pesan ke group."],
+        ["`.gucast` - > Kirim pesan ke private."],
+    ],
 
 
 CMD_HELP.update(
