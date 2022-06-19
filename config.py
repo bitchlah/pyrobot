@@ -25,8 +25,6 @@ BOTLOG_CHATID = int(getenv("BOTLOG_CHATID") or 0)
 BOT_VER = "0.1.0@main"
 BRANCH = "main"
 CHANNEL = getenv("CHANNEL", "ruangprojects")
-CMD_HANDLER = getenv("CMD_HANDLER", ".")
-PREFIX = getenv("PREFIX", ".")
 DB_URL = getenv("DATABASE_URL", "")
 GIT_TOKEN = getenv(
     "GIT_TOKEN",
