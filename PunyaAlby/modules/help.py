@@ -4,7 +4,7 @@ from prettytable import PrettyTable
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from main import CMD_HELP
+from PunyaAlby import CMD_HELP
 from PunyaAlby.helpers.utility import split_list
 
 heading = "──「 **{0}** 」──\n"
