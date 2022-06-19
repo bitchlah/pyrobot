@@ -24,6 +24,7 @@ API_ID = int(getenv("API_ID", ""))
 BOTLOG_CHATID = int(getenv("BOTLOG_CHATID") or 0)
 BOT_VER = "0.1.0@main"
 BRANCH = "main"
+PREFIX = getenv("PREFIX", ".")
 CHANNEL = getenv("CHANNEL", "ruangprojects")
 DB_URL = getenv("DATABASE_URL", "")
 GIT_TOKEN = getenv(
