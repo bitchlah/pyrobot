@@ -5,7 +5,7 @@ from pyrogram.types import Message
 from requests import get
 
 from config import CMD_HANDLER as cmd
-from PunyaAlby.help import add_command_help
+from PunyaAlby.modules.help import add_command_help
 
 add_command_help(
     "gcast",
