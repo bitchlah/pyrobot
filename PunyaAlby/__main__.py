@@ -14,10 +14,10 @@ from PunyaAlby import BOTLOG_CHATID, LOGGER, LOOP, bots
 from PunyaAlby.helpers.misc import git, heroku
 
 MSG_ON = """
-🔥 **PROJECTS-Userbot Berhasil Di Aktifkan**
+🔥 **ALBY-Userbot Berhasil Di Aktifkan**
 ━━
 ➠ **Userbot Version -** `{}`
-➠ **Ketik** `{}alive` **untuk Mengecheck Bot**
+➠ **Ketik** `{}ping` **untuk Mengecheck Bot**
 ━━
 """
 
