@@ -15,6 +15,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from config import *
+from config import LOGO_ALBY
 from PunyaAlby import CMD_HELP, StartTime
 
 CMD_HELP.update(
