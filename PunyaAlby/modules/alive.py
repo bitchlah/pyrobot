@@ -16,18 +16,18 @@ async def alive(client: Client, e: Message):
         Alive_msg += f"► ᴘʏʀᴏ ᴠᴇʀsɪᴏɴ : `{pyro_vr}` \n"
         Alive_msg += f"► Sᴜᴘᴘᴏʀᴛ : [Jᴏɪɴ.](https://t.me/ruangdiskusikami) \n"
         Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n\n"
-            alby = InlineKeyboardMarkup(
+        alby = InlineKeyboardMarkup(
+            [
                 [
-                    [
-                        InlineKeyboardButton(
-                            text="☎️ Support", url="https://t.me/ruangprojects"
-                        ),
-                        InlineKeyboardButton(
-                            text="📣 Updates", url="https://t.me/ruangprojects"
-                        ),
-                    ],
-                ]
-            )
+                    InlineKeyboardButton(
+                        text="☎️ Support", url="https://t.me/ruangprojects"
+                    ),
+                    InlineKeyboardButton(
+                        text="📣 Updates", url="https://t.me/ruangprojects"
+                    ),
+                ],
+            ]
+        )
         await e.reply_photo(
         photo=ALIVE_LOGO,
         caption=Alive_msg,
@@ -40,18 +40,18 @@ async def alive(client: Client, e: Message):
         Alive_msg += f"► Pʏʀᴏ ᴠᴇʀsɪᴏɴ : `1.4.15` \n"
         Alive_msg += f"► Sᴜᴘᴘᴏʀᴛ : [Jᴏɪɴ](https://ruangdiskusikami) \n"
         Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n\n"
-            alby = InlineKeyboardMarkup(
+        alby = InlineKeyboardMarkup(
+            [
                 [
-                    [
-                        InlineKeyboardButton(
-                            text="☎️ Support", url="https://t.me/ruangprojects"
-                        ),
-                        InlineKeyboardButton(
-                            text="📣 Updates", url="https://t.me/ruangprojects"
-                        ),
-                    ],
-                ]
-            )
+                    InlineKeyboardButton(
+                        text="☎️ Support", url="https://t.me/ruangprojects"
+                    ),
+                    InlineKeyboardButton(
+                        text="📣 Updates", url="https://t.me/ruangprojects"
+                    ),
+                ],
+            ]
+        )
         await e.reply_photo(
         photo=ALIVE_LOGO,
         caption=Alive_msg,
