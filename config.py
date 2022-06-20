@@ -17,7 +17,7 @@ load_dotenv("config.env")
 
 
 ALIVE_EMOJI = getenv("ALIVE_EMOJI", "⚡️")
-ALIVE_LOGO = getenv("ALIVE_LOGO", "https://telegra.ph/file/cbe826936d4de9ec1838a.jpg")
+LOGO_ALBY = getenv("ALIVE_LOGO", "https://telegra.ph/file/cbe826936d4de9ec1838a.jpg")
 ALIVE_TEKS_CUSTOM = getenv("ALIVE_TEKS_CUSTOM", "Hey, I am alive.")
 API_HASH = getenv("API_HASH")
 API_ID = int(getenv("API_ID", ""))
@@ -25,6 +25,7 @@ BOTLOG_CHATID = int(getenv("BOTLOG_CHATID") or 0)
 BOT_VER = "0.1.0@main"
 BRANCH = "main"
 CMD_HANDLER = getenv("CMD_HANDLER", ".")
+PREFIX = getenv("PREFIX", ".")
 CHANNEL = getenv("CHANNEL", "ruangprojects")
 DB_URL = getenv("DATABASE_URL", "")
 GIT_TOKEN = getenv(
