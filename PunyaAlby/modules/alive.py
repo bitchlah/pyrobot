@@ -15,7 +15,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from config import *
-from config import LOGO_ALBY
+from config import ALIVE_LOGO
 from PunyaAlby import CMD_HELP, StartTime
 
 CMD_HELP.update(
@@ -73,7 +73,7 @@ async def alive(_, m):
     reply_msg += f"► ᴏᴡɴᴇʀ: [{eek}](tg://user?id={berak})\n"
     time.time()
     reply_msg += f"► Prime uptime: {uptime}\n└───────═━┈━═──────"
-    photo = LOGO_ALBY
+    photo = ALIVE_LOGO
     await m.delete()
     if m.reply_to_message:
         await client.send_photo(
