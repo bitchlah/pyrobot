@@ -20,14 +20,14 @@ BL = get(
 
 
 @Client.on_message(filters.command("gcast", ".") & filters.me)
-async def chat_broadcast(client, message):
-    if message.reply_to_message:
-        msg = message.reply_to_message
+async def chat_broadcast(c: Client, m: Message):
+    if m.reply_to_message:
+        msg = m.reply_to_message.text.markdown
     else:
-        await message.edit_text("Balas pesan untuk menyiarkannya")
+        await m.edit_text("Balas pesan untuk disiarkan")
         return
 
-    await message.edit_text("Menjalankan perintah broadcast!")
+    await m.reply_text("Mengirim pesan ke seluruh group yang kamu ikuti!")
     sent = 0
     failed = 0
     async for dialog in client.iter_dialogs():
@@ -52,24 +52,24 @@ async def chat_broadcast(client, message):
 
 
 @Client.on_message(filters.command("gucast", ".") & filters.me)
-async def chat_broadcast(client, message):
-    if message.reply_to_message:
-        msg = message.reply_to_message
+async def chat_broadcast(c: Client, m: Message):
+    if m.reply_to_message:
+        msg = m.reply_to_message.text.markdown
     else:
-        await message.edit_text("Balas pesan untuk menyiarkannya")
+        await m.edit_text("Balas pesan untuk disiarkan")
         return
 
-    await message.edit_text("Menjalankan perintah broadcast!")
+    await m.reply_text("Mengirim pesan ke seluruh private chat kamu!")
     sent = 0
     failed = 0
-    async for dialog in client.iter_dialogs():
+    async for dialog in c.iter_dialogs():
         chat_type = dialog.chat.type
         if chat_type in [
             "private",
         ]:
             chat = dialog.chat.id
-            mmek = message.from_user.id
-            if chat != memek:
+            masih = message.from_user.id
+            if chat != masih:
                 try:
                     await msg.copy(chat)
                     sent = sent + 1
