@@ -14,9 +14,13 @@ async def alive(client: Client, e: Message):
         Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n"
         Alive_msg += f"► Vᴇʀsɪᴏɴ : `Beta.0.1` \n"
         Alive_msg += f"► ᴘʏʀᴏ ᴠᴇʀsɪᴏɴ : `{pyro_vr}` \n"
-        Alive_msg += f"► Sᴜᴘᴘᴏʀᴛ : [Jᴏɪɴ.](https://t.me/ruangdiskusikami) \n"
+        Alive_msg += f"► SUPPORT : [Jᴏɪɴ](https://t.me/ruangdiskusikami) \n"
+        Alive_msg += f"► UPDATES : [Jᴏɪɴ](https://t.me/ruangprojects) \n"
         Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n\n"
-        alby = InlineKeyboardMarkup(
+        await e.reply_photo(
+        photo=ALIVE_LOGO,
+        caption=Alive_msg,
+        reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
@@ -27,11 +31,6 @@ async def alive(client: Client, e: Message):
                     ),
                 ],
             ]
-        )
-        await e.reply_photo(
-        photo=ALIVE_LOGO,
-        caption=Alive_msg,
-        reply_markup=alby,
         ) 
 
 add_command_help(
