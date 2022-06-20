@@ -12,16 +12,13 @@ from sys import version_info
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
+from PunyaAlby.modules.help import *
 
-from PunyaAlby import CMD_HELP
-
-CMD_HELP.update(
-    {
-        "ping": f"""
-『 **Alive** 』
-  `.ping` -> Menunjukkan kepada Anda kecepatan respons bot.
-"""
-    }
+add_command_help(
+    "ping",
+    [
+        [".ping", "Menunjukkan kecepatan respons bot."],
+    ],
 )
 
 __major__ = 0
