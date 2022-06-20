@@ -20,23 +20,19 @@ BL = get(
 
 
 @Client.on_message(filters.command("gcast", ".") & filters.me)
-async def chat_broadcast(c: Client, m: Message):
-    if m.reply_to_message:
-        msg = m.reply_to_message.text.markdown
+async def chat_broadcast(client: Client, message: Message):
+    if message.reply_to_message:
+        msg = message.reply_to_message.text.markdown
     else:
-        await m.edit_text("Balas pesan untuk disiarkan")
+        await message.edit_text("Balas pesan untuk disiarkan")
         return
 
-    await m.reply_text("Mengirim pesan ke seluruh group yang kamu ikuti!")
+    await message.reply_text("Mengirim pesan ke seluruh group yang kamu ikuti!")
     sent = 0
     failed = 0
     async for dialog in client.iter_dialogs():
-        chat_type = dialog.chat.type
-        if chat_type in [
-            "supergroup",
-            "group",
-        ]:
-            chat = dialog.chat.id
+    if message.chat.type in ["group", "supergroup"]:
+            chat = message.chat.id
             if chat not in BL:
                 try:
                     await msg.copy(chat)
@@ -52,22 +48,19 @@ async def chat_broadcast(c: Client, m: Message):
 
 
 @Client.on_message(filters.command("gucast", ".") & filters.me)
-async def chat_broadcast(c: Client, m: Message):
-    if m.reply_to_message:
-        msg = m.reply_to_message.text.markdown
+async def chat_broadcast(client: Client, message: Message):
+    if message.reply_to_message:
+        msg = message.reply_to_message.text.markdown
     else:
-        await m.edit_text("Balas pesan untuk disiarkan")
+        await message.edit_text("Balas pesan untuk disiarkan")
         return
 
-    await m.reply_text("Mengirim pesan ke seluruh private chat kamu!")
+    await message.reply_text("Mengirim pesan ke seluruh private chat kamu!")
     sent = 0
     failed = 0
-    async for dialog in c.iter_dialogs():
-        chat_type = dialog.chat.type
-        if chat_type in [
-            "private",
-        ]:
-            chat = dialog.chat.id
+    async for dialog in client.iter_dialogs():
+    if message.chat.type in ["private"]:
+            chat = message.chat.id
             masih = message.from_user.id
             if chat != masih:
                 try:
