@@ -31,7 +31,7 @@ async def alive(client: Client, e: Message):
         await e.reply_photo(
         photo=ALIVE_LOGO,
         caption=Alive_msg,
-        reply_markup=alby
+        reply_markup=alby,
         ) 
 
 add_command_help(
