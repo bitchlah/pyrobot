@@ -8,7 +8,7 @@ from PunyaAlby.modules.help import *
 async def member_ban(client: Client, message: Message):
     if message.chat.type in ["group", "supergroup"]:
         chat_id = message.chat.id
-        me_m =await client.get_me
+        me_m = await client.get_me
         me_ = await message.chat.get_member(int(me_m.id))
         if not me_.can_restrict_members:
          await message.edit("`You Don't Have Ban Permission!`")
@@ -68,7 +68,7 @@ async def member_unban(client: Client, message: Message):
         username=message.reply_to_message.from_user.id
 
     chat_id=message.chat.id
-    me_m =await client.get_me()
+    me_m = await client.get_me()
     me_ = await message.chat.get_member(int(me_m.id))
     user_info=await client.get_users(username)
     if me_.can_restrict_members:      
