@@ -21,8 +21,8 @@ CMD_HELP.update(
     {
         "alive": f"""
 『 **Alive** 』
-  `{PREFIX}alive` -> Pamerkan kepada orang-orang dengan bot Anda menggunakan perintah ini.
-  `{PREFIX}ping` -> Menunjukkan kepada Anda kecepatan respons bot.
+  `.alive` -> Pamerkan kepada orang-orang dengan bot Anda menggunakan perintah ini.
+  `.ping` -> Menunjukkan kepada Anda kecepatan respons bot.
 """
     }
 )
