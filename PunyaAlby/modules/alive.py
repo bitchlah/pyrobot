@@ -61,7 +61,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 @Client.on_message(filters.command("alive", ".") & filters.me)
-async def alive(_, m):
+async def alive(_, m: Message):
     time.time()
     eek = m.from_user.first_name
     berak = m.from_user.id
@@ -74,16 +74,16 @@ async def alive(_, m):
     time.time()
     reply_msg += f"► Prime uptime: {uptime}\n└───────═━┈━═──────"
     foto = ALIVE_LOGO
+    await m.delete()
     if m.reply_to_message:
-        await m.send_file(
+        await m.send_photo(
             m.chat.id,
             foto,
             caption=reply_msg,
             reply_to_message_id=m.reply_to_message.message_id,
         )
     else:
-        await m.send_file(m.chat.id, foto, caption=reply_msg)
-        await m.delete()
+        await m.send_photo(m.chat.id, foto, caption=reply_msg)
 
 @Client.on_message(filters.command("ping", ".") & filters.me)
 async def pingme(_, message: Message):
