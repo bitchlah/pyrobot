@@ -37,9 +37,9 @@ async def main():
 
 
 if __name__ == "__main__":
-    LOGGER("PunyaAlby").info("Starting PROJECTS-UserBot")
+    LOGGER("PunyaAlby").info("Starting ALBY-UserBot")
     LOGGER("PunyaAlby").info(f"Total Clients = {len(bots)} Users")
     git()
     heroku()
-    LOGGER("PunyaAlby").info(f"PROJECTS-UserBot v{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
+    LOGGER("PunyaAlby").info(f"ALBY-UserBot v{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
     LOOP.run_until_complete(main())
