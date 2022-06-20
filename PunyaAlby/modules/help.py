@@ -4,8 +4,6 @@ from prettytable import PrettyTable
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from config import *
-from config import LOGO_ALBY
 from PunyaAlby import CMD_HELP
 from PunyaAlby.helpers.utility import split_list
 
