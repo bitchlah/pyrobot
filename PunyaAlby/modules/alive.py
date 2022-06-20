@@ -73,16 +73,17 @@ async def alive(_, m):
     reply_msg += f"► ᴏᴡɴᴇʀ: [{eek}](tg://user?id={berak})\n"
     time.time()
     reply_msg += f"► Prime uptime: {uptime}\n└───────═━┈━═──────"
+    foto = ALIVE_LOGO
     await m.delete()
     if m.reply_to_message:
-        await client.send_photo(
+        await m.send_photo(
             m.chat.id,
-            ALIVE_LOGO,
+            foto,
             caption=reply_msg,
             reply_to_message_id=m.reply_to_message.message_id,
         )
     else:
-        await client.send_photo(m.chat.id, ALIVE_LOGO, caption=reply_msg)
+        await m.send_photo(m.chat.id, foto, caption=reply_msg)
 
 
 @Client.on_message(filters.command("ping", ".") & filters.me)
