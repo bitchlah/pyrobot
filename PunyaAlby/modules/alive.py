@@ -16,6 +16,7 @@ from pyrogram.types import Message
 
 from config import *
 from config import ALIVE_LOGO
+from PunyaAlby.modules.help import *
 from PunyaAlby import CMD_HELP, StartTime
 
 CMD_HELP.update(
