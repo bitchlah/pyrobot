@@ -30,8 +30,8 @@ async def alive(client: Client, e: Message):
                         text="📣 Updates", url="https://t.me/ruangprojects"
                     ),
                 ],
-            ]
-        ) 
+            ],
+        ),
 
 add_command_help(
     "alive",
