@@ -33,30 +33,6 @@ async def alive(client: Client, e: Message):
         caption=Alive_msg,
         reply_markup=alby
     ) 
-    except Exception as lol:         
-        Alive_msg = f"𝐀𝐋𝐁𝐘 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐈𝐬 𝐎𝐧 𝐅𝐢𝐫𝐞 🔥 \n\n"
-        Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n"
-        Alive_msg += f"► ᴠᴇʀsɪᴏɴ : `Beta.0.1` \n"
-        Alive_msg += f"► Pʏʀᴏ ᴠᴇʀsɪᴏɴ : `1.4.15` \n"
-        Alive_msg += f"► Sᴜᴘᴘᴏʀᴛ : [Jᴏɪɴ](https://ruangdiskusikami) \n"
-        Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n\n"
-        alby = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        text="☎️ Support", url="https://t.me/ruangprojects"
-                    ),
-                    InlineKeyboardButton(
-                        text="📣 Updates", url="https://t.me/ruangprojects"
-                    ),
-                ],
-            ]
-        )
-        await e.reply_photo(
-        photo=ALIVE_LOGO,
-        caption=Alive_msg,
-        reply_markup=alby
-    ) 
 
 add_command_help(
     "alive",
