@@ -59,7 +59,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-@Client.on_message(filters.command("alive", PREFIX) & filters.me)
+@Client.on_message(filters.command("alive", ".") & filters.me)
 async def alive(_, m):
     time.time()
     eek = m.from_user.first_name
@@ -85,7 +85,7 @@ async def alive(_, m):
         await client.send_photo(m.chat.id, photo, caption=reply_msg)
 
 
-@Client.on_message(filters.command("ping", PREFIX) & filters.me)
+@Client.on_message(filters.command("ping", ".") & filters.me)
 async def pingme(_, message: Message):
     start = datetime.now()
     await message.edit("`Pong!`")
