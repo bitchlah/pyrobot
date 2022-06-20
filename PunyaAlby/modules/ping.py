@@ -10,19 +10,15 @@ import time
 from datetime import datetime
 from sys import version_info
 
-from pyrogram import __version__ as jembut
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from config import *
-from config import ALIVE_LOGO
-from PunyaAlby import CMD_HELP, StartTime
+from PunyaAlby import CMD_HELP
 
 CMD_HELP.update(
     {
-        "alive": f"""
+        "ping": f"""
 『 **Alive** 』
-  `.alive` -> Pamerkan kepada orang-orang dengan bot Anda menggunakan perintah ini.
   `.ping` -> Menunjukkan kepada Anda kecepatan respons bot.
 """
     }
@@ -59,31 +55,6 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-
-@Client.on_message(filters.command("alive", ".") & filters.me)
-async def alive(_, message: Message):
-    time.time()
-    eek = message.from_user.first_name
-    berak = message.from_user.id
-    uptime = get_readable_time((time.time() - StartTime))
-    reply_msg = f"┌───────═━┈━═──────\n► **[Prime-Userbot](https://github.com/BukanDev/Prime-Userbot)**\n"
-    reply_msg += f"► Python: `{__python_version__}`\n"
-    reply_msg += f"► @Pyrogram version: `{jembut}`\n"
-    reply_msg += f"► Prime Version: `0.0.2`\n"
-    reply_msg += f"► ᴏᴡɴᴇʀ: [{eek}](tg://user?id={berak})\n"
-    time.time()
-    reply_msg += f"► Prime uptime: {uptime}\n└───────═━┈━═──────"
-    foto = ALIVE_LOGO
-    await message.delete()
-    if message.reply_to_message:
-        await message.send_file(
-            m.chat.id,
-            foto,
-            caption=reply_msg,
-            reply_to_message_id=m.reply_to_message.message_id,
-        )
-    else:
-        await message.send_file(m.chat.id, foto, caption=reply_msg)
 
 @Client.on_message(filters.command("ping", ".") & filters.me)
 async def pingme(_, message: Message):
