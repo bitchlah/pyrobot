@@ -16,7 +16,6 @@ from pyrogram.types import Message
 
 from config import *
 from config import ALIVE_LOGO
-from PunyaAlby.modules.help import *
 from PunyaAlby import CMD_HELP, StartTime
 
 CMD_HELP.update(
@@ -27,16 +26,6 @@ CMD_HELP.update(
   `.ping` -> Menunjukkan kepada Anda kecepatan respons bot.
 """
     }
-)
-
-add_command_help(
-    "alive",
-    [
-        [
-            ".alive",
-            "This Command for check your bot working or nt",
-        ]
-    ],
 )
 
 __major__ = 0
@@ -84,17 +73,16 @@ async def alive(_, m):
     reply_msg += f"► ᴏᴡɴᴇʀ: [{eek}](tg://user?id={berak})\n"
     time.time()
     reply_msg += f"► Prime uptime: {uptime}\n└───────═━┈━═──────"
-    photo = ALIVE_LOGO
     await m.delete()
     if m.reply_to_message:
         await client.send_photo(
             m.chat.id,
-            photo,
+            ALIVE_LOGO,
             caption=reply_msg,
             reply_to_message_id=m.reply_to_message.message_id,
         )
     else:
-        await client.send_photo(m.chat.id, photo, caption=reply_msg)
+        await client.send_photo(m.chat.id, ALIVE_LOGO, caption=reply_msg)
 
 
 @Client.on_message(filters.command("ping", ".") & filters.me)
