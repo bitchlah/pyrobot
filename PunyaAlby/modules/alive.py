@@ -28,6 +28,16 @@ CMD_HELP.update(
     }
 )
 
+add_command_help(
+    "alive",
+    [
+        [
+            ".alive",
+            "This Command for check your bot working or nt",
+        ]
+    ],
+)
+
 __major__ = 0
 __minor__ = 2
 __micro__ = 1
