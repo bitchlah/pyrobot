@@ -2,10 +2,10 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQu
 from pyrogram import filters, Client
 from pyrogram.types import Message
 import re
-from helpers.SQL.pmstuff import givepermit, checkpermit, blockuser, getwarns, allallowed, allblocked, inwarns, addwarns
-from main import SUDO_USERS as Adminsettings, LOG_GROUP
-from handlers.help import *
-from main import ALIVE_PIC
+from PunyaAlby.helpers.SQL.pmstuff import givepermit, checkpermit, blockuser, getwarns, allallowed, allblocked, inwarns, addwarns
+from config import SUDO_USERS as Adminsettings, LOG_GROUP
+from PunyaAlby.handlers.help import *
+from config import ALIVE_PIC
 
 Alive_msg = f"ALBY USERBOT  \n\n"
 Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n"
