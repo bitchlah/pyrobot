@@ -6,7 +6,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from pyrogram import Client
-from main import *
+from config import *
 SUDO = SUDO_USERS
 
 @Client.on_message(filters.me & filters.command(["q", "quote"], '.'))
