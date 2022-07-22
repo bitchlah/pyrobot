@@ -3,7 +3,6 @@ from pyrogram import filters, Client
 from pyrogram.types import Message
 import re
 from PunyaAlby.helpers.SQL.pmstuff import givepermit, checkpermit, blockuser, getwarns, allallowed, allblocked, inwarns, addwarns
-from config import SUDO_USERS as Adminsettings, LOG_GROUP
 from PunyaAlby.modules.help import *
 from config import ALIVE_PIC
 
