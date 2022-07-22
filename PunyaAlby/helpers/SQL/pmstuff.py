@@ -1,5 +1,5 @@
 try:
-    from helpers.SQL import BASE, SESSION
+    from PunyaAlby.helpers.SQL import BASE, SESSION
 except ImportError:
     raise AttributeError
 from sqlalchemy import Column, String, UnicodeText
