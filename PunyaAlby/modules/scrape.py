@@ -1,8 +1,8 @@
 from pyrogram import Client , filters
 import asyncio
 from pyrogram.types import Message
-from main import SUDO_USERS
-from handlers.help import *
+from config import SUDO_USERS
+from PunyaAlby.modules.help import *
 
 
 @Client.on_message(filters.command('inviteall'))
