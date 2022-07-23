@@ -1,7 +1,7 @@
 from PunyaAlby.helpers.SQL import dbb
 
 gbun = dbb["GBAN"]
-
+dbb["GBAN"] = gbun
 
 async def gban_user(user, reason="#GBanned"):
     await gbun.insert_one({"user": user, "reason": reason})
