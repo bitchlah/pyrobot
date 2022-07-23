@@ -9,8 +9,8 @@ from pyrogram.types import (
     InlineQueryResultArticle,
     InputTextMessageContent,
     Message)
-from helpers.SQL.gbandb import gban_info, gban_list, gban_user, ungban_user
-from helpers.SQL.gmutedb import gmute, is_gmuted, ungmute
+from PunyaAlby.helpers.SQL.gbandb import gban_info, gban_list, gban_user, ungban_user
+from PunyaAlby.helpers.SQL.gmutedb import gmute, is_gmuted, ungmute
 
 
 async def iter_chats(client: Client):
