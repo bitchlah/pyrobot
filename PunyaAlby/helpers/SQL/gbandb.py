@@ -1,4 +1,4 @@
-from helpers.SQL import dbb
+from PunyaAlby.helpers.SQL import dbb
 
 gbun = dbb["GBAN"]
 
