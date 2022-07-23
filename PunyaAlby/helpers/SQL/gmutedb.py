@@ -1,7 +1,6 @@
-from PunyaAlby.helpers.SQL import dbb
+from PunyaAlby.helpers.SQL import gmuteh
 
 gmuteh = dbb["GMUTE"]
-dbb["GMUTE"] = gmuteh
 
 async def is_gmuted(sender_id):
     kk = await gmuteh.find_one({"sender_id": sender_id})
