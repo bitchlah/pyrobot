@@ -283,3 +283,34 @@ async def gbroadcast(client: Client, message: Message):
     await msg_.edit(
         f"`Message Sucessfully Send To {chat_len-failed} Chats! Failed In {failed} Chats.`"
     )
+
+@Client.on_message(filters.me & filters.command("gcast", ["."]))
+async def chat_broadcast(client, message):
+    if message.reply_to_message:
+        msg = message.reply_to_message
+    else:
+        await message.edit_text("Balas pesan untuk menyiarkannya")
+        return
+
+    await message.edit_text("Menjalankan perintah broadcast!")
+    sent = 0
+    failed = 0
+    async for dialog in app.iter_dialogs():
+        chat_type = dialog.chat.type
+        if chat_type in [
+            "private",
+        ]:
+            chat = dialog.chat.id
+            mmek = message.from_user.id
+            if chat != memek:
+                try:
+                    await msg.copy(chat)
+                    sent = sent + 1
+                    await asyncio.sleep(0.1)
+                except:
+                    failed = failed + 1
+                    await asyncio.sleep(0.1)
+
+    return await message.edit_text(
+        f"**Pesan global selesai \n\nTerkirim ke:** `{sent}` **Chats \nGagal terkirim ke:** `{failed}` **Chats**"
+    )
