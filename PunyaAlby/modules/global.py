@@ -284,7 +284,7 @@ async def gbroadcast(client: Client, message: Message):
         f"`Message Sucessfully Send To {chat_len-failed} Chats! Failed In {failed} Chats.`"
     )
 
-@Client.on_message(filters.me & filters.command("gcast", ["."]))
+@Client.on_message(filters.me & filters.command("gucast", ["."]))
 async def chat_broadcast(client, message):
     if message.reply_to_message:
         msg = message.reply_to_message
