@@ -17,9 +17,6 @@ async def alive(client: Client, e: Message):
         Alive_msg += f"► SUPPORT : [Jᴏɪɴ](https://t.me/ruangdiskusikami) \n"
         Alive_msg += f"► UPDATES : [Jᴏɪɴ](https://t.me/ruangprojects) \n"
         Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n\n"
-        await e.reply_photo(
-        photo=ALIVE_LOGO,
-        caption=Alive_msg,
         buttons = InlineKeyboardMarkup(
                 [
                     [
@@ -34,6 +31,11 @@ async def alive(client: Client, e: Message):
                     ],
                 ]
             )
+        await e.reply_photo(
+        photo=ALIVE_LOGO,
+        caption=Alive_msg,
+        parse_mode="markdown",
+        reply_markup=buttons,
         )
 
 
