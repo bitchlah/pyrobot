@@ -25,11 +25,11 @@ async def alive(client: Client, e: Message):
                     [
                         InlineKeyboardButton(
                             text="SUPPORT",
-                            url=https://t.me/ruangdiskusikami,
+                            url="https://t.me/ruangdiskusikami",
                         ),
                         InlineKeyboardButton(
                             text="UPDATES",
-                            url=https://t.me/ruangprojects,
+                            url="https://t.me/ruangprojects",
                         ),
                     ],
                 ]
