@@ -34,7 +34,6 @@ async def alive(client: Client, e: Message):
         await e.reply_photo(
         photo=ALIVE_LOGO,
         caption=Alive_msg,
-        parse_mode="markdown",
         reply_markup=buttons,
         )
 
