@@ -20,7 +20,6 @@ async def alive(client: Client, e: Message):
         await e.reply_photo(
         photo=ALIVE_LOGO,
         caption=Alive_msg,
-        )
         buttons = InlineKeyboardMarkup(
                 [
                     [
@@ -31,6 +30,8 @@ async def alive(client: Client, e: Message):
                     ],
                 ]
             )
+        )
+
 
 add_command_help(
     "alive",
