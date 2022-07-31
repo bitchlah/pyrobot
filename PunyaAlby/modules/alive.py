@@ -21,6 +21,16 @@ async def alive(client: Client, e: Message):
         photo=ALIVE_LOGO,
         caption=Alive_msg,
         )
+        buttons = InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="SUPPORT",
+                            url=t.me/ruangdiskusikami,
+                        )
+                    ],
+                ]
+            )
 
 add_command_help(
     "alive",
