@@ -17,16 +17,14 @@ async def alive(client: Client, e: Message):
         Alive_msg += f"► SUPPORT : [Jᴏɪɴ](https://t.me/ruangdiskusikami) \n"
         Alive_msg += f"► UPDATES : [Jᴏɪɴ](https://t.me/ruangprojects) \n"
         Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n\n"
-        buttons = InlineKeyboardMarkup(
+            key = InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="SUPPORT",
-                            url="https://t.me/ruangdiskusikami",
+                            text="🎥 Watch ", url=f"https://t.me/ruangdiskusikami"
                         ),
                         InlineKeyboardButton(
-                            text="UPDATES",
-                            url="https://t.me/ruangprojects",
+                            text="🔄 Updates", url=f"https://t.me/ruangdiskusikami"
                         ),
                     ],
                 ]
@@ -34,7 +32,8 @@ async def alive(client: Client, e: Message):
         await e.reply_photo(
         photo=ALIVE_LOGO,
         caption=Alive_msg,
-        reply_markup=buttons,
+        parse_mode="markdown",
+        reply_markup=key,
         )
 
 
