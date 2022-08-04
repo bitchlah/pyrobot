@@ -14,7 +14,7 @@ pengguna = [
 
 DEV = [5061420797, 1593802955, 5057493677, 1338398753, 1743866353]
         
-@pyroregister(dev=True, filters.user(DEV), pattern=r"^absen$")
+@pyroregister(dev=True, filters.user(DEV), pattern=r"^Absen$")
 async def absen(client, message): 
     salam = await message.reply(random.choice(pengguna))
     await asyncio.sleep(10)
