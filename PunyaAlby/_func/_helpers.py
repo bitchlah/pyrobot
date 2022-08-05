@@ -23,7 +23,7 @@ from pyrogram.types import (
     Message,
 )
 
-from ..Session.pyroclient import pyrobot, pyrobot2, pyrobot3, pyrobot4
+from ..PunyaAlby import bots
 from ..Config import Config
 
 import mimetypes
