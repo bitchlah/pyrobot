@@ -7,9 +7,21 @@ from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 from requests import get
 
-from Cilik.helpers.adminHelpers import DEVS
+from PunyaAlby.modules.broadcast import DEVS
 
-from Cilik.modules.Ubot.help import add_command_help
+from PunyaAlby.modules.help import *
+
+DEVS = [
+    844432220, #risman
+    1883676087, #adam
+    1738637033, #td
+    1423479724, #toni
+    1784606556, #grey
+    1820233416, #bagas
+    1883126074, #yanto
+    2100131200, #kitaro
+    1952529842, #van
+]
 
 while 0 < 6:
     _GCAST_BLACKLIST = get(
