@@ -45,7 +45,7 @@ async def main():
             LOGGER("main").warning(a)
         LOGGER("PunyaAlby").info(f"ALBY-UserBot v{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
         if bot1 and not str(BOTLOG_CHATID).startswith("-100"):
-        await create_botlog(bots)
+        await create_botlog(bot)
     await idle()
     await aiosession.close()
 
