@@ -102,10 +102,9 @@ TEMP_SETTINGS["PM_LAST_MSG"] = {}
 
 bot1 = (
     Client(
-        session_name="bot1",
+        session_name=STRING_SESSION1,
         api_id=API_ID,
         api_hash=API_HASH,
-        session_string=STRING_SESSION1,
         plugins=dict(root="PunyaAlby/modules"),
     )
     if STRING_SESSION1
@@ -114,10 +113,9 @@ bot1 = (
 
 bot2 = (
     Client(
-        session_name="bot2",
+        session_name=STRING_SESSION2,
         api_id=API_ID,
         api_hash=API_HASH,
-        session_string=STRING_SESSION2,
         plugins=dict(root="PunyaAlby/modules"),
     )
     if STRING_SESSION2
@@ -126,10 +124,9 @@ bot2 = (
 
 bot3 = (
     Client(
-        session_name="bot3",
+        session_name=STRING_SESSION3,
         api_id=API_ID,
         api_hash=API_HASH,
-        session_string=STRING_SESSION3,
         plugins=dict(root="PunyaAlby/modules"),
     )
     if STRING_SESSION3
@@ -138,10 +135,9 @@ bot3 = (
 
 bot4 = (
     Client(
-        session_name="bot4",
+        session_name=STRING_SESSION4,
         api_id=API_ID,
         api_hash=API_HASH,
-        session_string=STRING_SESSION4,
         plugins=dict(root="PunyaAlby/modules"),
     )
     if STRING_SESSION4
@@ -150,10 +146,9 @@ bot4 = (
 
 bot5 = (
     Client(
-        session_name="bot5",
+        session_name=STRING_SESSION5,
         api_id=API_ID,
         api_hash=API_HASH,
-        session_string=STRING_SESSION5,
         plugins=dict(root="PunyaAlby/modules"),
     )
     if STRING_SESSION5
