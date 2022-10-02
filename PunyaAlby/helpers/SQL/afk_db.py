@@ -1,6 +1,6 @@
 from sqlalchemy import Boolean, Column, String, UnicodeText
 
-from Cilik.helpers.SQL import BASE, SESSION
+from PunyaAlby.helpers.SQL import BASE, SESSION
 
 Owner = 0
 
