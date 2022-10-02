@@ -6,7 +6,6 @@
 # <https://www.github.com/mrismanaziz/PyroMan-Userbot/blob/main/LICENSE/>.
 #
 # t.me/SharingUserbot & t.me/Lunatic0de
-# Cilik-PyroBot
 
 from re import sub
 from time import time
