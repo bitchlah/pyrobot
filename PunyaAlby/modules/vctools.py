@@ -6,7 +6,7 @@
 # <https://www.github.com/mrismanaziz/PyroMan-Userbot/blob/main/LICENSE/>.
 #
 # t.me/SharingUserbot & t.me/Lunatic0de
-# Dam-PyroBot
+# PUNYAALBY
 
 from asyncio import sleep
 from contextlib import suppress
