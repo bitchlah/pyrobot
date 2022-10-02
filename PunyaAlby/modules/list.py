@@ -19,7 +19,6 @@ from pyrogram.types import Message
 
 from PunyaAlby import *
 from PunyaAlby.helpers.basic import edit_or_reply
-from PunyaAlby.utils import s_paste
 
 from PunyaAlby.modules.help import *
 
