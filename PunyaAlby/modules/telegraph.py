@@ -1,47 +1,80 @@
-import os
+# Credits: @mrismanaziz
+# Copyright (C) 2022 Pyro-ManUserbot
+#
+# This file is a part of < https://github.com/mrismanaziz/PyroMan-Userbot/ >
+# PLease read the GNU Affero General Public License in
+# <https://www.github.com/mrismanaziz/PyroMan-Userbot/blob/main/LICENSE/>.
+#
+# t.me/SharingUserbot & t.me/Lunatic0de
+# Kit-Ub
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from telegraph import upload_file
+from telegraph import Telegraph, upload_file
+
+from PunyaAlby.helpers.basic import edit_or_reply
+from PunyaAlby.helpers.tools import *
 from PunyaAlby.modules.help import *
 
-@Client.on_message(filters.command(["tm", "tgm"], ".") & filters.me)
-async def telegraph(client, message):
-    replied = message.reply_to_message
-    if not replied:
-        await message.edit_text("reply to a supported media file")
-        return
-    if not (
-        (replied.photo and replied.photo.file_size <= 5242880)
-        or (replied.animation and replied.animation.file_size <= 5242880)
-        or (
-            replied.video
-            and replied.video.file_name.endswith(".mp4")
-            and replied.video.file_size <= 5242880
+telegraph = Telegraph()
+r = telegraph.create_account(short_name="Kit-Ubot")
+auth_url = r["auth_url"]
+
+
+@Client.on_message(filters.command(["tg", "tgm", "telegraph"], [".", "-", "^","!"]) & filters.me)
+async def uptotelegraph(client: Client, message: Message):
+    reply = message.reply_to_message
+    filesize = 5242880
+    Man = await message.reply("💈 `Memproses!`")
+    # if not replied
+    if not reply:
+        await Man.edit(
+            "**Mohon Balas Ke Pesan, Untuk Mendapatkan Link dari Telegraph.**"
         )
-        or (
-            replied.document
-            and replied.document.file_name.endswith(
-                (".jpg", ".jpeg", ".png", ".gif", ".mp4")
+    # replied to text
+    elif reply.text:
+        if len(reply.text) <= 4096:
+            link = telegraph.create_page(
+                client.me.first_name,
+                html_content=(reply.text.html).replace("\n", "<br>"),
             )
-            and replied.document.file_size <= 5242880
-        )
-    ):
-        await message.edit_text("not supported!")
-        return
-    download_location = await client.download_media(
-        message=message.reply_to_message, file_name="./downloads/"
-    )
-    try:
-        response = upload_file(download_location)
-    except Exception as document:
-        await client.send_message(message.chat.id, document)
+            await Man.edit(
+                f"**✅ Diunggah: https://telegra.ph/{link.get('path')}**"
+            )
+        else:
+            await Man.edit("Panjang teks melebihi 4096 karakter")
+    elif reply.media:
+        if (
+            reply.photo
+            and reply.photo.file_size <= filesize
+            or reply.video
+            and reply.video.file_size <= filesize
+            or reply.animation
+            and reply.animation.file_size <= filesize
+            or reply.sticker
+            and reply.sticker.file_size <= filesize
+            or reply.document
+            and reply.document.file_size <= filesize
+        ):
+            if reply.animation or reply.sticker:
+                loc = await client.download_media(reply, file_name=f"telegraph.png")
+            else:
+                loc = await client.download_media(reply)
+            try:
+                response = upload_file(loc)
+            except Exception as e:
+                return await Man.edit(f"**KESALAHAN:** `{e}`")
+            await Man.edit(
+                f"**✅ Diunggah: https://telegra.ph{response[0]}**"
+            )
+            if os.path.exists(loc):
+                os.remove(loc)
+        else:
+            await Man.edit(
+                "Silakan periksa format file atau ukuran file, harus kurang dari 5 mb . . ."
+            )
     else:
-        await message.edit_text(
-            f"**Document passed to: [Telegra.ph](https://telegra.ph{response[0]})**",
-        )
-    finally:
-        os.remove(download_location)
+        await Man.edit("Maaf, File tidak didukung !")
 
 add_command_help(
     "telegraph",
