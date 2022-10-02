@@ -12,7 +12,7 @@ from pyrogram import idle
 from uvloop import install
 
 from config import *
-from PunyaAlby import BOTLOG_CHATID, LOGGER, LOOP, aiosession, bot1, bots
+from PunyaAlby import BOTLOG_CHATID, LOGGER, LOOP, aiosession, bots
 from PunyaAlby.helpers.misc import create_botlog, git, heroku
 
 MSG_ON = """
@@ -45,7 +45,7 @@ async def main():
             LOGGER("main").warning(a)
         LOGGER("PunyaAlby").info(f"ALBY-UserBot v{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
         if bot1 and not str(BOTLOG_CHATID).startswith("-100"):
-        await create_botlog(bot1)
+        await create_botlog(bots)
     await idle()
     await aiosession.close()
 
