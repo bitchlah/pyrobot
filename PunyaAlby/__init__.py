@@ -102,7 +102,7 @@ TEMP_SETTINGS["PM_LAST_MSG"] = {}
 
 bot1 = (
     Client(
-        name="bot1",
+        session_name="bot1",
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=STRING_SESSION1,
@@ -114,7 +114,7 @@ bot1 = (
 
 bot2 = (
     Client(
-        name="bot2",
+        session_name="bot2",
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=STRING_SESSION2,
@@ -126,7 +126,7 @@ bot2 = (
 
 bot3 = (
     Client(
-        name="bot3",
+        session_name="bot3",
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=STRING_SESSION3,
@@ -138,7 +138,7 @@ bot3 = (
 
 bot4 = (
     Client(
-        name="bot4",
+        session_name="bot4",
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=STRING_SESSION4,
@@ -150,7 +150,7 @@ bot4 = (
 
 bot5 = (
     Client(
-        name="bot5",
+        session_name="bot5",
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=STRING_SESSION5,
