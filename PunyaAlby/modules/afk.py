@@ -16,7 +16,7 @@ from PunyaAlby import BOTLOG_CHATID
 from PunyaAlby.helpers.msg_types import Types, get_message_type
 from PunyaAlby.helpers.parser import escape_markdown, mention_markdown
 from PunyaAlby.helpers.SQL.afk_db import get_afk, set_afk
-from PunyaAlby.modules.Ubot.help import add_command_help
+from PunyaAlby.modules.help import *
 
 # Set priority to 11 and 12
 MENTIONED = []
