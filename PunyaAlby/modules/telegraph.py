@@ -6,7 +6,6 @@
 # <https://www.github.com/mrismanaziz/PyroMan-Userbot/blob/main/LICENSE/>.
 #
 # t.me/SharingUserbot & t.me/Lunatic0de
-# Kit-Ub
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
