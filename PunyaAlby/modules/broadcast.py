@@ -29,7 +29,7 @@ DEVS = [
 
 while 0 < 6:
     _GCAST_BLACKLIST = get(
-        "https://raw.githubusercontent.com/daamsy/Reforestation/master/blacklistgcast.json"
+        "https://raw.githubusercontent.com/PunyaAlby/Reforestation/master/blacklistgcast.json"
     )
     if _GCAST_BLACKLIST.status_code != 200:
         if 0 != 5:
