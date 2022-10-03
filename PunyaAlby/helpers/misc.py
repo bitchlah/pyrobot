@@ -12,7 +12,6 @@ import shlex
 import socket
 from typing import Tuple
 
-import dotenv
 import heroku3
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError
@@ -111,33 +110,7 @@ def heroku():
                 Heroku = heroku3.from_key(HEROKU_API_KEY)
                 HAPP = Heroku.app(HEROKU_APP_NAME)
                 LOGGER("PunyaAlby").info(f"Heroku App Configured")
-            except BaseException as e:
-                LOGGER("Heroku").error(e)
-                LOGGER("Heroku").info(
+            except BaseException:
+                LOGGER("PunyaAlby").warning(
                     f"Pastikan HEROKU_API_KEY dan HEROKU_APP_NAME anda dikonfigurasi dengan benar di config vars heroku."
                 )
-
-
-async def in_heroku():
-    return "heroku" in socket.getfqdn()
-
-
-async def create_botlog(client):
-    if HAPP is None:
-        return
-    LOGGER("PunyaAlby").info(
-        "TUNGGU SEBENTAR. SEDANG MEMBUAT GROUP LOG USERBOT UNTUK ANDA"
-    )
-    desc = "Group Log untuk ALBY-Ubot.\n\nHARAP JANGAN KELUAR DARI GROUP INI.\n\n⚡ Powered By ~ @ruangprojects ⚡"
-    try:
-        gruplog = await client.create_supergroup("⚡ ALBY-Logs ⚡", desc)
-        if await in_heroku():
-            heroku_var = HAPP.config()
-            heroku_var["BOTLOG_CHATID"] = gruplog.id
-        else:
-            path = dotenv.find_dotenv("config.env")
-            dotenv.set_key(path, "BOTLOG_CHATID", gruplog.id)
-    except Exception:
-        LOGGER("PunyaAlby").warning(
-            "var BOTLOG_CHATID kamu belum di isi. Buatlah grup telegram dan masukan bot @MissRose_bot lalu ketik /id Masukan id grup nya di var BOTLOG_CHATID"
-        )
