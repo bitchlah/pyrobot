@@ -18,7 +18,7 @@ from PunyaAlby.modules.help import *
 
 DEF_UNAPPROVED_MSG = (
     "╔════════════════════╗\n"
-    "         🚧 𝗣𝗿𝗶𝘃𝗮𝘁𝗲 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 🚧\n"
+    "          🚧 𝗣𝗿𝗶𝘃𝗮𝘁𝗲 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 🚧\n"
     "╚════════════════════╝\n"
     "► Saya belum menyetujui anda untuk PM.\n"
     "► Tunggu sampai saya menyetujui PM anda.\n"
