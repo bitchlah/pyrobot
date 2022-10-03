@@ -6,17 +6,15 @@
 # <https://www.github.com/mrismanaziz/PyroMan-Userbot/blob/main/LICENSE/>.
 #
 # t.me/SharingUserbot & t.me/Lunatic0de
-# Cilik-PyroBot
 
 from pyrogram import idle
-from uvloop import install
 
 from config import *
-from PunyaAlby import BOTLOG_CHATID, LOGGER, LOOP, aiosession, bots
-from PunyaAlby.helpers.misc import create_botlog, git, heroku
+from PunyaAlby import BOTLOG_CHATID, LOGGER, LOOP, bots
+from PunyaAlby.helpers.misc import git, heroku
 
 MSG_ON = """
-🔥 **ALBY-Userbot Berhasil Di Aktifkan**
+🔥 **ALBY-Pyrobot Berhasil Di Aktifkan**
 ━━
 ➠ **Userbot Version -** `{}`
 ➠ **Ketik** `{}ping` **untuk Mengecheck Bot**
@@ -32,27 +30,15 @@ async def main():
             await bot.join_chat("ruangdiskusikami")
             await bot.join_chat("ruangprojects")
             await bot.join_chat("ruang_gabutku")
-            try:
-                await bot.send_message(
-                    BOTLOG_CHATID, MSG_ON.format(BOT_VER)
-                )
-            except BaseException:
-                pass
-            LOGGER("PunyaAlby").info(
-                f"Logged in as {bot.me.first_name} | [ {bot.me.id} ]"
-            )
+            await bot.send_message(BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER))
         except Exception as a:
             LOGGER("main").warning(a)
-        LOGGER("PunyaAlby").info(f"ALBY-UserBot v{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
-        if bot and not str(BOTLOG_CHATID).startswith("-100"):
-        await create_botlog()
     await idle()
-    await aiosession.close()
 
 
 if __name__ == "__main__":
-    LOGGER("PunyaAlby").info("Starting ALBY-Ubot")
-    install()
+    LOGGER("PunyaAlby").info("Starting ALBY-Pyrobot")
     git()
     heroku()
+    LOGGER("PunyaAlby").info(f"ALBY-Pyrobot v{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
     LOOP.run_until_complete(main())
