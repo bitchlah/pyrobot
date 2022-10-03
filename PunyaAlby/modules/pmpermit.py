@@ -39,8 +39,8 @@ async def incomingpm(client: Client, message: Message):
     else:
         if message.chat.id != 777000:
             try:
-                from Cilik.helpers.SQL.globals import gvarstatus
-                from Cilik.helpers.SQL.pm_permit_sql import is_approved
+                from PunyaAlby.helpers.SQL.globals import gvarstatus
+                from PunyaAlby.helpers.SQL.pm_permit_sql import is_approved
             except BaseException:
                 pass
 
@@ -99,7 +99,7 @@ async def incomingpm(client: Client, message: Message):
 )
 async def approvepm(client: Client, message: Message):
     try:
-        from Cilik.helpers.SQL.pm_permit_sql import approve
+        from PunyaAlby.helpers.SQL.pm_permit_sql import approve
     except BaseException:
         await message.edit("Running on Non-SQL mode!")
         return
@@ -138,7 +138,7 @@ async def approvepm(client: Client, message: Message):
 )
 async def disapprovepm(client: Client, message: Message):
     try:
-        from Cilik.helpers.SQL.pm_permit_sql import dissprove
+        from PunyaAlby.helpers.SQL.pm_permit_sql import dissprove
     except BaseException:
         await message.edit("Running on Non-SQL mode!")
         return
@@ -176,7 +176,7 @@ async def setpm_limit(client: Client, cust_msg: Message):
             f"**Anda Harus Menyetel Var** `PM_AUTO_BAN` **Ke** `True`\n\n**Bila ingin Mengaktifkan PMPERMIT Silahkan Ketik:** `.setvar PM_AUTO_BAN True`"
         )
     try:
-        from Cilik.helpers.SQL.globals import addgvar
+        from PunyaAlby.helpers.SQL.globals import addgvar
     except AttributeError:
         await cust_msg.edit("**Running on Non-SQL mode!**")
         return
@@ -190,11 +190,11 @@ async def setpm_limit(client: Client, cust_msg: Message):
     )
     if not input_str:
         return await cust_msg.edit("**Harap masukan angka untuk PM_LIMIT.**")
-    Cilik = await cust_msg.edit("💈 `Memproses!`")
+    PunyaAlby = await cust_msg.edit("💈 `Memproses!`")
     if input_str and not input_str.isnumeric():
-        return await Cilik.edit("**Harap masukan angka untuk PM_LIMIT.**")
+        return await PunyaAlby.edit("**Harap masukan angka untuk PM_LIMIT.**")
     addgvar("PM_LIMIT", input_str)
-    await Cilik.edit(f"**Set PM limit to** `{input_str}`")
+    await PunyaAlby.edit(f"**Set PM limit to** `{input_str}`")
 
 
 @Client.on_message(filters.command("setpmpermit", [".", "-", "^", "!", "?"]) & filters.me)
@@ -205,20 +205,20 @@ async def setpmpermit(client: Client, cust_msg: Message):
             "**Anda Harus Menyetel Var** `PM_AUTO_BAN` **Ke** `True`\n\n**Bila ingin Mengaktifkan PMPERMIT Silahkan Ketik:** `.setvar PM_AUTO_BAN True`"
         )
     try:
-        import Cilik.helpers.SQL.globals as sql
+        import PunyaAlby.helpers.SQL.globals as sql
     except AttributeError:
         await cust_msg.edit("**Running on Non-SQL mode!**")
         return
-    Cilik = await cust_msg.edit("💈 `Memproses!`")
+    PunyaAlby = await cust_msg.edit("💈 `Memproses!`")
     custom_message = sql.gvarstatus("unapproved_msg")
     message = cust_msg.reply_to_message
     if custom_message is not None:
         sql.delgvar("unapproved_msg")
     if not message:
-        return await Cilik.edit("**Mohon Reply Ke Pesan**")
+        return await PunyaAlby.edit("**Mohon Reply Ke Pesan**")
     msg = message.text
     sql.addgvar("unapproved_msg", msg)
-    await Cilik.edit("**Pesan Berhasil Disimpan Ke Room Chat**")
+    await PunyaAlby.edit("**Pesan Berhasil Disimpan Ke Room Chat**")
 
 
 @Client.on_message(filters.command("getpmpermit", [".", "-", "^", "!", "?"]) & filters.me)
@@ -228,16 +228,16 @@ async def get_pmermit(client: Client, cust_msg: Message):
             "**Anda Harus Menyetel Var** `PM_AUTO_BAN` **Ke** `True`\n\n**Bila ingin Mengaktifkan PMPERMIT Silahkan Ketik:** `.setvar PM_AUTO_BAN True`"
         )
     try:
-        import Cilik.helpers.SQL.globals as sql
+        import PunyaAlby.helpers.SQL.globals as sql
     except AttributeError:
         await cust_msg.edit("**Running on Non-SQL mode!**")
         return
-    Cilik = await cust_msg.edit("💈 `Memproses!`")
+    PunyaAlby = await cust_msg.edit("💈 `Memproses!`")
     custom_message = sql.gvarstatus("unapproved_msg")
     if custom_message is not None:
-        await Cilik.edit("**Pesan PMPERMIT Yang Sekarang:**" f"\n\n{custom_message}")
+        await PunyaAlby.edit("**Pesan PMPERMIT Yang Sekarang:**" f"\n\n{custom_message}")
     else:
-        await Cilik.edit(
+        await PunyaAlby.edit(
             "**Anda Belum Menyetel Pesan Costum PMPERMIT,**\n"
             f"**Masih Menggunakan Pesan PM Default:**\n\n{DEF_UNAPPROVED_MSG}"
         )
@@ -250,18 +250,18 @@ async def reset_pmpermit(client: Client, cust_msg: Message):
             f"**Anda Harus Menyetel Var** `PM_AUTO_BAN` **Ke** `True`\n\n**Bila ingin Mengaktifkan PMPERMIT Silahkan Ketik:** `{cmd}setvar PM_AUTO_BAN True`"
         )
     try:
-        import Cilik.helpers.SQL.globals as sql
+        import PunyaAlby.helpers.SQL.globals as sql
     except AttributeError:
         await cust_msg.edit("**Running on Non-SQL mode!**")
         return
-    Cilik = await cust_msg.edit("💈 `Memproses!`")
+    PunyaAlby = await cust_msg.edit("💈 `Memproses!`")
     custom_message = sql.gvarstatus("unapproved_msg")
 
     if custom_message is None:
-        await Cilik.edit("**Pesan PMPERMIT Anda Sudah Default**")
+        await PunyaAlby.edit("**Pesan PMPERMIT Anda Sudah Default**")
     else:
         sql.delgvar("unapproved_msg")
-        await Cilik.edit("**Berhasil Mengubah Pesan Custom PMPERMIT menjadi Default**")
+        await PunyaAlby.edit("**Berhasil Mengubah Pesan Custom PMPERMIT menjadi Default**")
 
 
 add_command_help(
