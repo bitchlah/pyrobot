@@ -21,7 +21,7 @@ from config import GROUP
 from PunyaAlby import CMD_HELP, StartTime
 from PunyaAlby.helpers.basic import edit_or_reply
 from PunyaAlby.helpers.PyroHelpers import ReplyCheck
-from PunyaAlby.utils import get_readable_time
+from PunyaAlby.utils.tools import get_readable_time
 
 from .help import add_command_help
 
