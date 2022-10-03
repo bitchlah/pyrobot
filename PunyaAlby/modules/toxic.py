@@ -18,7 +18,7 @@ from PunyaAlby.modules.broadcast import *
 from PunyaAlby.modules.broadcast import *
 from PunyaAlby.helpers.basic import edit_or_reply
 from PunyaAlby.helpers.PyroHelpers import ReplyCheck
-from PunyaAlby.utils import extract_user
+from PunyaAlby.utils.misc import extract_user
 from PunyaAlby.modules.help import *
 
 
