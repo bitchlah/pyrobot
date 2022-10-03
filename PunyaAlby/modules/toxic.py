@@ -13,7 +13,7 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from config import BLACKLIST_CHAT
+from PunyaAlby.modules.broadcast import *
 
 from PunyaAlby.modules.broadcast import *
 from PunyaAlby.helpers.basic import edit_or_reply
@@ -118,7 +118,7 @@ async def toxicso(client: Client, message: Message):
 @Client.on_message(filters.command("nb", [".", "-", "^", "!", "?"]) & filters.me)
 async def toxicnb(client: Client, message: Message):
     user_id = await extract_user(message)
-    if message.chat.id in BLACKLIST_CHAT:
+    if message.chat.id in GCAST_BLACKLIST:
         return await edit_or_reply(
             message, "**Perintah ini Dilarang digunakan di Group ini**"
         )
@@ -292,7 +292,7 @@ async def toxicdih(client: Client, message: Message):
 @Client.on_message(filters.command("gcs", [".", "-", "^", "!", "?"]) & filters.me)
 async def toxicgcs(client: Client, message: Message):
     user_id = await extract_user(message)
-    if message.chat.id in BLACKLIST_CHAT:
+    if message.chat.id in GCAST_BLACKLIST:
         return await edit_or_reply(
             message, "**Perintah ini Dilarang digunakan di Group ini**"
         )
