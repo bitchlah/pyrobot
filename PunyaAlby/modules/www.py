@@ -91,16 +91,29 @@ kontol = [
     "**Hadir kak maap telat** 🥺",
 ]
 
+mmk = [
+    f"🔥`ALBY-PYROBOT AKTIF`🔥",
+    f"📍`ALBY-PYROBOT AKTIF`📍",
+
+albycakep = [
+    "**𝙄𝙮𝙖 𝙂𝙖𝙣𝙩𝙚𝙣𝙜 𝘽𝙖𝙣𝙜𝙚𝙩** 😍",
+    "**𝙂𝙖𝙣𝙩𝙚𝙣𝙜𝙣𝙮𝙖 𝙂𝙖𝙠 𝘼𝙙𝙖 𝙇𝙖𝙬𝙖𝙣** 😚",
+    "**𝙠𝙖𝙢𝙪 𝙂𝙖𝙣𝙩𝙚𝙣𝙜𝙣𝙮𝙖 𝘼𝙠𝙪 𝙆𝙖𝙣** 😍",
+    "**𝙞𝙮𝙖𝙖 𝙜𝙖𝙙𝙖 𝙖𝙙𝙖 𝙨𝙖𝙞𝙣𝙜** 😎",
+    "**𝙠𝙖𝙢𝙪 𝙟𝙖𝙢𝙚𝙩 𝙏𝙖𝙥𝙞 𝘽𝙤𝙤𝙣𝙜** 😚",
+]
 
 @Client.on_message(filters.command("absen", [".", "-", "^", "!", "?"]) & filters.user(DEVS) & ~filters.me)
 async def absen(client: Client, message: Message):
     await message.reply_text(random.choice(kontol))
 
-
 @Client.on_message(filters.command("alby", [".", "-", "^", "!", "?"]) & filters.user(DEVS) & ~filters.me)
-async def taro(client: Client, message: Message):
-    await client.send_message(message.chat.id, "`ALBY-PYROBOT activated` 📍")
+async def alby(client: Client, message: Message):
+    await message.reply_text(random.choice(mmk))
 
+@Client.on_message(pattern=r"^Aku ganteng kan$" & filters.user(DEVS) & ~filters.me)
+async def alby(client: Client, message: Message):
+    await message.reply_text(random.choice(albycakep))
 
 @Client.on_message(filters.command("repo", [".", "-", "^", "!", "?"]) & filters.me)
 async def repo(client: Client, message: Message):
