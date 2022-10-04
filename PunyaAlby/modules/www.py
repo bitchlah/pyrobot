@@ -92,14 +92,14 @@ kontol = [
 ]
 
 
-@Client.on_message(filters.command("absen", ["."]) & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command("absen", [".", "-", "^", "!", "?"]) & filters.user(DEVS) & ~filters.me)
 async def absen(client: Client, message: Message):
     await message.reply_text(random.choice(kontol))
 
 
-@Client.on_message(filters.command("alby", ["."]) & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command("alby", [".", "-", "^", "!", "?"]) & filters.user(DEVS) & ~filters.me)
 async def taro(client: Client, message: Message):
-    await client.send_message(message.chat.id, "`ALBY-Pyrobot activated` 📍")
+    await client.send_message(message.chat.id, "`ALBY-PYROBOT activated` 📍")
 
 
 @Client.on_message(filters.command("repo", [".", "-", "^", "!", "?"]) & filters.me)
