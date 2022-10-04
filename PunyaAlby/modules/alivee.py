@@ -38,13 +38,13 @@ async def alive(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
     capt = (
         f"✘ [ALBY-Pyrobot](https://github.com/PunyaAlby/ALBY-Pyrobot) ✘\n\n"
-        f"<b>{alive_text}</b>\n\n"
+        f"<b>{ALIVE_TEKS_CUSTOM}</b>\n\n"
         f"✘ <b>Owner: </b> {client.me.mention} \n"
         f"✘ <b>Modul: </b> <code> Modules</code> \n"
         f"✘ <b>Bot Version: </b> <code>{BOT_VER}</code> \n"
         f"✘ <b>Python: </b> <code>{python_version()}</code> \n"
         f"✘ <b>Pyrogram: </b> <code>{versipyro}</code> \n"
-        f"✘ <b>Support :</b> [Group](https://t.me/ruangdiskusikami) \n\n"
+        f"✘ <b>Support :</b> [Group](https://t.me/ruangdiskusikami) \n"
         f"✘ <b>Update :</b> [Channel](https://t.me/ruangprojects) \n\n"
     )
     await asyncio.gather(
