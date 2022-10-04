@@ -241,17 +241,17 @@ async def quotly(bot: Client, message: Message):
             await sleep(1)
             progress += random.randint(0, 5)
             if progress > 100:
-                await Cilik.edit("Kesalahan!")
+                await Cilik.edit("`Kesalahan!`")
                 return
             try:
                 await Cilik.edit("```Membuat Kutipan..\nMemproses! {}%```".format(progress))
             except:
-                await Cilik.edit("GAGAL")
+                await Cilik.edit("`GAGAL`")
 
     if msg_id := msg[0]["message_id"]:
         await asyncio.gather(
             Cilik.delete(),
-            bot.copy_message(message.chat.id, "@QuotLyBot", msg_id),
+            bot.forward_messages(message.chat.id, "@QuotLyBot", msg_id)
         )
 
 
