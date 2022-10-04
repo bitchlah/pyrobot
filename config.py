@@ -17,7 +17,7 @@ load_dotenv("config.env")
 
 
 ALIVE_EMOJI = getenv("ALIVE_EMOJI", "⚡️")
-ALIVE_LOGO = getenv("ALIVE_LOGO", "https://telegra.ph/file/cbe826936d4de9ec1838a.jpg")
+ALIVE_LOGO = getenv("ALIVE_LOGO", "https://telegra.ph/file/7b2a3fa167686dfaa3da8.jpg")
 ALIVE_TEKS_CUSTOM = getenv("ALIVE_TEKS_CUSTOM", "Hey, I am ALBY-Pyrobot.")
 API_HASH = getenv("API_HASH")
 API_ID = int(getenv("API_ID", ""))
