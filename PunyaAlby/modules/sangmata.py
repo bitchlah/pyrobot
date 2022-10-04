@@ -21,7 +21,7 @@ from PunyaAlby.modules.help import *
 
 @Client.on_message(filters.command(["sg", "sa", "sangmata"], [".", "-", "^", "!", "?"]) & filters.me)
 async def sg(client: Client, message: Message):
-    lol = await message.reply("💈 `Harap Tunggu, kontol!`")
+    lol = await message.reply("💈 `Harap Tunggu..`")
     if not message.reply_to_message:
         await lol.edit("reply to any message")
     reply = message.reply_to_message
