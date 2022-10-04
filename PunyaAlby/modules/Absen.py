@@ -6,8 +6,7 @@ import asyncio
 from pyrogram import filters
 
 pengguna = [
-    f"🔥`ALBY-PYROBOT AKTIF`🔥",
-    f"📍`ALBY-PYROBOT AKTIF`📍",
+    f"`ALBY-PYROBOT AKTIF`📍",
 ]
 
 DEV = [1441342342, 5089916692, 2014359828, 1337194042]
