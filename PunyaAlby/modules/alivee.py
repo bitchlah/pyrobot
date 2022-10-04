@@ -43,9 +43,11 @@ async def alive(client: Client, message: Message):
         f"✘ <b>Bot Version: </b> <code>{BOT_VER}</code> \n"
         f"✘ <b>Python Version: </b> <code>{python_version()}</code> \n"
         f"✘ <b>Pyrogram Version: </b> <code>{versipyro}</code> \n"
-        f"┍———————— /ᐠ｡ꞈ｡ᐟ\ ————————┑\n"
-        f"┊    <b>[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/ruangdiskusikami)</b> & <b>[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/ruangprojects)</b>\n"
-        f"┕———————(ฅ)(ฅ) ∫∫————————┙"
+        f"　  (\︵/) \n"
+        f"　⫺( •ᆺ•)⫹ \n"
+        f"┏━∪ ━━━━━━━━━━━┓\n"
+        f"╏<b>[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/ruangdiskusikami)</b> & <b>[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/ruangprojects)</b>\n"
+        f"┗━━━━━━━━━━━━━"
     )
     await asyncio.gather(
         xx.delete(),
