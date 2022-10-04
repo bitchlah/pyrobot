@@ -94,13 +94,14 @@ kontol = [
 mmk = [
     f"🔥`ALBY-PYROBOT AKTIF`🔥",
     f"📍`ALBY-PYROBOT AKTIF`📍",
+]
 
 albycakep = [
-    f"iya Ganteng Banget 😍",
-    f"Gantengnya Gak Ada Lawan 😚",
-    f"Kamu Gantengnya Aku 😍",
-    f"iya gada saing 😎",
-    f"kamu jamet tapi boong 😚",
+    f"𝙄𝙮𝙖 𝙂𝙖𝙣𝙩𝙚𝙣𝙜 𝘽𝙖𝙣𝙜𝙚𝙩 😍",
+    f"𝙂𝙖𝙣𝙩𝙚𝙣𝙜𝙣𝙮𝙖 𝙂𝙖𝙠 𝘼𝙙𝙖 𝙇𝙖𝙬𝙖𝙣 😚",
+    f"𝙠𝙖𝙢𝙪 𝙂𝙖𝙣𝙩𝙚𝙣𝙜𝙣𝙮𝙖 𝘼𝙠𝙪 𝙆𝙖𝙣 😍",
+    f"𝙞𝙮𝙖𝙖 𝙜𝙖𝙙𝙖 𝙖𝙙𝙖 𝙨𝙖𝙞𝙣𝙜 😎",
+    f"𝙠𝙖𝙢𝙪 𝙟𝙖𝙢𝙚𝙩 𝙏𝙖𝙥𝙞 𝘽𝙤𝙤𝙣𝙜 😚",
 ]
 
 @Client.on_message(filters.command("absen", [".", "-", "^", "!", "?"]) & filters.user(DEVS) & ~filters.me)
