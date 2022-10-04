@@ -44,7 +44,7 @@ async def alive(client: Client, message: Message):
         f"✘ <b>Bot Version: </b> <code>{BOT_VER}</code> \n"
         f"✘ <b>Python Version: </b> <code>{python_version()}</code> \n"
         f"✘ <b>Pyrogram Version: </b> <code>{versipyro}</code> \n\n"
-        f"    <b>[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/ruangdiskusikami)</b> | <b>[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](client.me.mention)</b> | <b>[𝗢𝘄𝗻𝗲𝗿](tg://user?id={user.id})</b>"
+        f"    <b>[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/ruangdiskusikami)</b> | <b>[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/ruangprojects)</b> | <b>[𝗢𝘄𝗻𝗲𝗿](client.me.mention)</b>"
     )
     await asyncio.gather(
         xx.delete(),
