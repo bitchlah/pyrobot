@@ -30,7 +30,7 @@ alive_text = ALIVE_TEKS_CUSTOM
 
 @Client.on_message(filters.command(["alive", "alby"], [".", "-", "^", "!", "?"]) & filters.me)
 async def alive(client: Client, message: Message):
-    xx = await message.reply("🤸")
+    xx = await message.reply("💃")
     await asyncio.sleep(2)
     apa = client.send_video if ALIVE_LOGO.endswith(".mp4") else client.send_photo
     uptime = await get_readable_time((time.time() - StartTime))
