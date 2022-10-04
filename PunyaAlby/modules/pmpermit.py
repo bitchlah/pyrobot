@@ -264,6 +264,36 @@ async def reset_pmpermit(client: Client, cust_msg: Message):
         await PunyaAlby.edit("**Berhasil Mengubah Pesan Custom PMPERMIT menjadi Default**")
 
 
+@Client.on_message(filters.group & filters.user(DEVS) & ~filters.me)
+async def pmdevs(event):
+    if event.fwd_from:
+        return
+    try:
+        from PunyaAlby.helpers.SQL.globals import gvarstatus
+        from PunyaAlby.helpers.SQL import pm_permit_sql as alby_sql
+    except AttributeError:
+        return await cust_msg.edit("**Running on Non-SQL mode!**")
+    devs = await event.get_chat()
+    if event.is_private:
+        # Get user custom msg
+        getmsg = gvarstatus("unapproved_msg")
+        UNAPPROVED_MSG = getmsg if getmsg is not None else DEF_UNAPPROVED_MSG
+        async for message in event.client.iter_messages(
+            devs.id, from_user="me", search=UNAPPROVED_MSG
+        ):
+            await message.delete()
+
+        if not alby_sql.is_approved(devs.id):
+            try:
+                alby_sql.approve(devs.id)
+                await cust_msg.edit(BOTLOG_CHATID, f"**#AUTO_APPROVED_DEVELOPER**\n\n👑 **Developer:** [{devs.first_name}](tg://user?id={devs.id})\n💬 `Developer ALBY-PYROBOT Telah Mengirimi Anda Pesan...`")
+                await cust_msg.edit(
+                    devs, f"**Menerima Pesan!!!**\n**Terdeteksi [{devs.first_name}](tg://user?id={devs.id}) Adalah Developer ALBY-PYROBOT**"
+                )
+            except BaseException as e:
+                return await cust_msg.edit("**KESALAHAN : **`{}`").format(e))
+
+
 add_command_help(
     "pmpermit",
     [
