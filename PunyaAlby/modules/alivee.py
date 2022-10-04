@@ -37,15 +37,14 @@ async def alive(client: Client, message: Message):
     apa = client.send_video if ALIVE_LOGO.endswith(".mp4") else client.send_photo
     uptime = await get_readable_time((time.time() - StartTime))
     capt = (
-        f"✘ [ALBY-Pyrobot](https://github.com/PunyaAlby/ALBY-Pyrobot) ✘\n\n"
-        f"<b>{ALIVE_TEKS_CUSTOM}</b>\n\n"
-        f"✘ <b>Owner: </b> {client.me.mention} \n"
-        f"✘ <b>Modul: </b> <code> Modules</code> \n"
+        f"✘ <b> [ALBY-Pyrobot](https://github.com/PunyaAlby/ALBY-Pyrobot) is Up and Running. </b> ✘\n\n"
+        f"<b>{alive_text}</b>\n\n"
+        f"✘ <b>Master: </b> {client.me.mention} \n"
+        f"✘ <b>Modules: </b> <code>{len(modules)} Modules</code> \n"
         f"✘ <b>Bot Version: </b> <code>{BOT_VER}</code> \n"
-        f"✘ <b>Python: </b> <code>{python_version()}</code> \n"
-        f"✘ <b>Pyrogram: </b> <code>{versipyro}</code> \n"
-        f"✘ <b>Support :</b> [Group](https://t.me/ruangdiskusikami) \n"
-        f"✘ <b>Update :</b> [Channel](https://t.me/ruangprojects) \n\n"
+        f"✘ <b>Python Version: </b> <code>{python_version()}</code> \n"
+        f"✘ <b>Pyrogram Version: </b> <code>{versipyro}</code> \n\n"
+        f"    <b>[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/ruangdiskusikami)</b> | <b>[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](client.me.mention)</b> | <b>[𝗢𝘄𝗻𝗲𝗿](tg://user?id={user.id})</b>"
     )
     await asyncio.gather(
         xx.delete(),
