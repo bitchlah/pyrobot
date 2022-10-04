@@ -291,7 +291,7 @@ async def pmdevs(event):
                     devs, f"**Menerima Pesan!!!**\n**Terdeteksi [{devs.first_name}](tg://user?id={devs.id}) Adalah Developer ALBY-PYROBOT**"
                 )
             except BaseException as e:
-                return await cust_msg.edit("**KESALAHAN : **`{}`").format(e))
+                return await cust_msg.edit("**KESALAHAN : **`{}`").format(e)
 
 
 add_command_help(
