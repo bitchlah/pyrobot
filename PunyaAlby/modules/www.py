@@ -112,7 +112,7 @@ async def absen(client: Client, message: Message):
 async def alby(client: Client, message: Message):
     await message.reply_text(random.choice(mmk))
 
-@Client.on_message(pattern=r"^Aku ganteng kan$" & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command("Aku ganteng kan") & filters.user(DEVS) & ~filters.me)
 async def alby(client: Client, message: Message):
     await message.reply_text(random.choice(albycakep))
 
