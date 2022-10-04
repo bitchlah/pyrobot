@@ -14,7 +14,7 @@ from PunyaAlby import BOTLOG_CHATID, LOGGER, LOOP, bots
 from PunyaAlby.helpers.misc import git, heroku
 
 MSG_ON = """
-🔥 **ALBY-Pyrobot Berhasil Di Aktifkan**
+🔥 **ALBY-PYROBOT Berhasil Di Aktifkan**
 ━━
 ➠ **Userbot Version -** `{}`
 ➠ **Ketik** `{}ping` **untuk Mengecheck Bot**
@@ -37,8 +37,8 @@ async def main():
 
 
 if __name__ == "__main__":
-    LOGGER("PunyaAlby").info("Starting ALBY-Pyrobot")
+    LOGGER("PunyaAlby").info("Starting ALBY-PYROBOT")
     git()
     heroku()
-    LOGGER("PunyaAlby").info(f"ALBY-Pyrobot v{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
+    LOGGER("PunyaAlby").info(f"ALBY-PYROBOT v{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
     LOOP.run_until_complete(main())
