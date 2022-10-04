@@ -45,7 +45,7 @@ async def alive(client: Client, message: Message):
         f"✘ <b>Pyrogram Version: </b> <code>{versipyro}</code> \n"
         f"┍———————— /ᐠ｡ꞈ｡ᐟ\ ————————┑\n"
         f"┊    <b>[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/ruangdiskusikami)</b> & <b>[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/ruangprojects)</b>\n"
-        f"┕———————(ฅ)(ฅ) ∫∫————————┙\n"
+        f"┕———————(ฅ)(ฅ) ∫∫————————┙"
     )
     await asyncio.gather(
         xx.delete(),
