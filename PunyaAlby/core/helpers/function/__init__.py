@@ -4,7 +4,7 @@ from .syncpart import SyncPart
 
 
 
-class Functions(
+class Function(
     AsyncPart,
     SyncPart
 ):
