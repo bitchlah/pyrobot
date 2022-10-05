@@ -46,7 +46,7 @@ async def inline_result(_, inline_query):
         await inline_query.answer(
         results=[
             InlineQueryResultPhoto(
-                photo_url=app.PmpermitPic(),
+                photo_url=app.BotPic(),
                 title="Tron Inline security system",
                 description="Get tron security system inline menu.",
                 caption=app.PmpermitText(),
@@ -94,7 +94,7 @@ async def inline_result(_, inline_query):
         await inline_query.answer(
         results=[
             InlineQueryResultPhoto(
-                photo_url=app.ialive_pic(),
+                photo_url=app.BotPic(),
                 title="Tron Inline alive",
                 description="Get your inline alive results with buttons.",
                 caption=app.ialive_tab_string(),
