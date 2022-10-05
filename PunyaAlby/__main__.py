@@ -12,14 +12,43 @@ from pyrogram import idle
 from config import *
 from PunyaAlby import BOTLOG_CHATID, LOGGER, LOOP, bots
 from PunyaAlby.helpers.misc import git, heroku
+from PunyaAlby.client import app
 
 MSG_ON = """
 🔥 **ALBY-PYROBOT Berhasil Di Aktifkan**
 ━━
 ➠ **Userbot Version -** `{}`
-➠ **Ketik** `{}ping` **untuk Mengecheck Bot**
+➠ **Ketik** `{}alby` **untuk Mengecheck Bot**
 ━━
 """
+
+async def start_assistant():
+    """ this function starts the pyrogram bot client. """
+    if app and app.bot:
+        print("Activating assistant.\n")
+        response = await app.bot.start()
+        if response:
+            print("Assistant activated.\n")
+            botcmd = [
+                ["start", "check whether bot is on or not."],
+                ["help", "Get your helpdex."],
+                ["ping", "Get server response speed & uptime."],
+                ["id", "Get ids of users / groups."],
+                ["quote", "get inline anime quotes."],
+                ["broadcast", "send messages to users who have started your bot."],
+            ]
+            cmds = [x.command for x in await app.bot.get_bot_commands()]
+            botcmdkeys = [y[0] for y in botcmd]
+
+            if cmds != botcmdkeys:
+                print("Setting bot commands.\n")
+                await app.bot.set_bot_commands([BotCommand(y[0], y[1]) for y in botcmd])
+                print("Added bot commands.\n")
+        else:
+            print("Assistant is not activated.\n")
+    else:
+        print("Assistant start unsuccessful, please check that you have given the bot token.\n")
+        print("skipping assistant start !")
 
 
 async def main():
