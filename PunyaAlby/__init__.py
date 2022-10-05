@@ -7,6 +7,13 @@
 #
 # t.me/SharingUserbot & t.me/Lunatic0de
 
+""" everything starts here """
+
+from config import Config
+from PunyaAlby.client import app
+bot = app.bot
+from PunyaAlby.core.filters import gen, regex
+
 import asyncio
 import logging
 import sys
