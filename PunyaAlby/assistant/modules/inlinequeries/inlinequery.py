@@ -74,17 +74,15 @@ async def inline_result(_, inline_query):
                     [
                         app.BuildKeyboard(
                             (
-                                [f"{emoji} Settings {emoji}", "settings-tab"],
-                                [f"{emoji} Plugins {emoji}", "plugins-tab"]
+                                [f"{emoji} Modules {emoji}", "plugins-tab"]
                             )
                         ),
                         app.BuildKeyboard(
                             (
-                                [f"{emoji} Extra {emoji}", "extra-tab"],
-                                [f"{emoji} Stats {emoji}", "stats-tab"]
+                                [f"{emoji} Diskusi {emoji}", "https://t.me/ruangdiskusikami"],
+                                [f"{emoji} Update {emoji}", "https://t.me/ruangprojects"]
                             )
                         ),
-                        app.BuildKeyboard(([["Assistant", "assistant-tab"]])),
                         app.BuildKeyboard(([["Close", "close-tab"]]))
                     ]
                 )
