@@ -17,7 +17,7 @@ load_dotenv("config.env")
 
 
 # access token of your bot, without this the bot will not work (required)
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+BOT_TOKEN = getenv("BOT_TOKEN", "5572055272:AAGOeYqMUbPjmWGvnJQ7VFalr-e_-QLfyQo")
 # a group to store logs, etc (required)
 LOG_CHAT = int(os.getenv("LOG_CHAT", "-100"))
 ALIVE_EMOJI = getenv("ALIVE_EMOJI", "⚡️")
