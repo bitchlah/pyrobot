@@ -16,6 +16,10 @@ from dotenv import load_dotenv
 load_dotenv("config.env")
 
 
+# access token of your bot, without this the bot will not work (required)
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+# a group to store logs, etc (required)
+LOG_CHAT = int(os.getenv("LOG_CHAT", "-100"))
 ALIVE_EMOJI = getenv("ALIVE_EMOJI", "⚡️")
 ALIVE_LOGO = getenv("ALIVE_LOGO", "https://telegra.ph/file/7b2a3fa167686dfaa3da8.jpg")
 ALIVE_TEKS_CUSTOM = getenv("ALIVE_TEKS_CUSTOM", "Hey, I am ALBY-PYROBOT 🔥")
