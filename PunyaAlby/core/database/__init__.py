@@ -1,4 +1,4 @@
-from main.core.database.postgres.pmpermit_sql import PMPERMITSQL
+from PunyaAlby.core.database.postgres.pmpermit_sql import PMPERMITSQL
 
 
 
