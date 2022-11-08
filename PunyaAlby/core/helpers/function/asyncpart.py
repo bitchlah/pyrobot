@@ -25,10 +25,7 @@ from pyrogram.errors import (
 from pyrogram.types import (
     Message,
 )
-from pyrogram.enums import (
-    ParseMode,
-    ChatType
-)
+from pyrogram.enums import ParseMode, ChatType
 
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
