@@ -24,7 +24,7 @@ class Configuration(object): # pylint: disable=too-few-public-methods
     # api hash of your telegram account (required)
     API_HASH = os.getenv("API_HASH")
     # create a session using command [ python3 session.py ] or use repl.it (required)
-    SESSION = os.getenv("SESSION")
+    STRING_SESSION = os.getenv("STRING_SESSION")
     # access token of your bot, without this the bot will not work (required)
     BOT_TOKEN = os.getenv("BOT_TOKEN")
     # database url (required)
