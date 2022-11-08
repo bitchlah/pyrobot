@@ -10,11 +10,11 @@
       "description": "Dapatkan API Hash di web my.telegram.org",
       "required": true
     },
-    "STRING_SESSION1": {
+    "STRING_SESSION": {
       "description": "Dapatkan String Session Pyrogram di Grup » https://t.me/SharingUserbot » Lalu ketik #string",
       "required": true
     },
-    "BOTLOG_CHATID": {
+    "LOG_CHAT": {
       "description": "Buatlah grup telegram publik lalu masukan @MissRose_bot ketik /id, masukan id grup nya disini. contoh: -1001473548xxx",
       "value": "0",
       "required": false
@@ -27,7 +27,15 @@
       "description": "Masukan Nama App heroku, Nama App yang paling pertama di isi (liat paling atas)",
       "required": false
     }
-  },
+    "TRIGGER": {
+      "description": "This Is The Command Triggering Button Of Your All Commands. You Can Change It To -> [ . , ? ' / + - * ] Any Symbol That You Like.",
+      "value": ".",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Go to @botfather in telegram and make a new bot and get the bot token.",
+      "required": true
+    }
   "addons": [
     {
       "plan": "heroku-postgresql"
