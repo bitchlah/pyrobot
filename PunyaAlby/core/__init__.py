@@ -1,4 +1,4 @@
-from main.core.classes.classmanager import ClassManager
+from PunyaAlby.core.classes.classmanager import ClassManager
 
 
 
