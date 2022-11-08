@@ -1,6 +1,6 @@
 """ everything starts here """
 
 from config import Config
-from main.userbot.client import app
+from PunyaAlby.client import app
 bot = app.bot
-from main.core.filters import gen, regex
+from PunyaAlby.core.filters import gen, regex
