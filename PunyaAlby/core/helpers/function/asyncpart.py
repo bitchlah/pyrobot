@@ -25,7 +25,7 @@ from pyrogram.errors import (
 from pyrogram.types import (
     Message,
 )
-from pyrogram.enums import ParseMode, ChatType
+from pyrogram.enums import ParseMode
 
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
@@ -457,12 +457,6 @@ class AsyncPart(object):
         if self.is_bot:
             raise BotMethodInvalid
 
-        if self.m.chat.type == ChatType.PRIVATE:
-            await self.send_edit(
-                "Please use these commands in groups.",
-                text_type=["mono"],
-                delme=3
-            )
             return True
         return False
 
