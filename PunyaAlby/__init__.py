@@ -25,18 +25,10 @@ from pytgcalls import GroupCallFactory
 from config import (
     API_HASH,
     API_ID,
+    BOT_TOKEN,
     BOTLOG_CHATID,
     DB_URL,
-    STRING_SESSION1,
-    STRING_SESSION2,
-    STRING_SESSION3,
-    STRING_SESSION4,
-    STRING_SESSION5,
-    STRING_SESSION6,
-    STRING_SESSION7,
-    STRING_SESSION8,
-    STRING_SESSION9,
-    STRING_SESSION10,
+    STRING_SESSION,
     SUDO_USERS,
 )
 
@@ -77,6 +69,7 @@ def LOGGER(name: str) -> logging.Logger:
 
 API_ID = API_ID
 API_HASH = API_HASH
+BOT_TOKEN = BOT_TOKEN
 SUDO_USERS = SUDO_USERS
 DB_URL = DB_URL
 
@@ -92,77 +85,31 @@ if not API_HASH:
     LOGGER(__name__).error("No API_HASH Found! Exiting!")
     sys.exit()
 
+if not BOT_TOKEN:
+    LOGGER(__name__).error("No BOT_TOKEN Found! Exiting!")
+    sys.exit()
+
 if BOTLOG_CHATID:
     BOTLOG_CHATID = BOTLOG_CHATID
 else:
     BOTLOG_CHATID = "me"
 
 
-bot1 = (
+app = (
     Client(
-        name="bot1",
+        name="app",
         api_id=API_ID,
         api_hash=API_HASH,
-        session_string=STRING_SESSION1,
+        session_string=STRING_SESSION,
         plugins=dict(root="PunyaAlby/modules"),
     )
-    if STRING_SESSION1
+    if STRING_SESSION
     else None
 )
 
-bot2 = (
-    Client(
-        name="bot2",
-        api_id=API_ID,
-        api_hash=API_HASH,
-        session_string=STRING_SESSION2,
-        plugins=dict(root="PunyaAlby/modules"),
-    )
-    if STRING_SESSION2
-    else None
-)
-
-bot3 = (
-    Client(
-        name="bot3",
-        api_id=API_ID,
-        api_hash=API_HASH,
-        session_string=STRING_SESSION3,
-        plugins=dict(root="PunyaAlby/modules"),
-    )
-    if STRING_SESSION3
-    else None
-)
-
-bot4 = (
-    Client(
-        name="bot4",
-        api_id=API_ID,
-        api_hash=API_HASH,
-        session_string=STRING_SESSION4,
-        plugins=dict(root="PunyaAlby/modules"),
-    )
-    if STRING_SESSION4
-    else None
-)
-
-bot5 = (
-    Client(
-        name="bot5",
-        api_id=API_ID,
-        api_hash=API_HASH,
-        session_string=STRING_SESSION5,
-        plugins=dict(root="PunyaAlby/modules"),
-    )
-    if STRING_SESSION5
-    else None
-)
+gbot = Client(":memory:", API_ID, API_HASH, bot_token=BOT_TOKEN)
 
 
-bots = [
-    bot for bot in [bot1, bot2, bot3, bot4, bot5] if bot
-]
-
-for bot in bots:
-    if not hasattr(bot, "group_call"):
-        setattr(bot, "group_call", GroupCallFactory(bot).get_group_call())
+for app:
+    if not hasattr(app, "group_call"):
+        setattr(app, "group_call", GroupCallFactory(bot).get_group_call())
