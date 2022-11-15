@@ -22,7 +22,7 @@ from PunyaAlby import app
 async def _close(_, cb: CallbackQuery):
     await cb.edit_message_media(
         media=InputMediaPhoto(
-            media="app.ALIVE_LOGO()", 
+            media="pp.ALIVE_LOGO(), 
             caption=app.close_tab_string()
         ),
         reply_markup=InlineKeyboardMarkup(
