@@ -56,4 +56,4 @@ STRING_SESSION7 = getenv("STRING_SESSION7", "")
 STRING_SESSION8 = getenv("STRING_SESSION8", "")
 STRING_SESSION9 = getenv("STRING_SESSION9", "")
 STRING_SESSION10 = getenv("STRING_SESSION10", "")
-SUDO_USERS = list(map(int, getenv("SUDO_USERS", "").
+SUDO_USERS = list(map(int, getenv("SUDO_USERS", "")
