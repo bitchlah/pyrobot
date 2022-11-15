@@ -10,7 +10,7 @@ from pyrogram.types import (
     CallbackQuery,
 )
 
-from PunyaAlby.userbot import app
+from PunyaAlby import app
 
 
 
@@ -20,7 +20,7 @@ from PunyaAlby.userbot import app
 @app.alert_user
 async def _start(_, cb: CallbackQuery):
     await cb.edit_message_media(
-        media=InputMediaPhoto(media=app.BotPic(), caption=app.home_tab_string()),
+        media=InputMediaPhoto(media=app.ALIVE_LOGO(), caption=app.home_tab_string()),
         reply_markup=InlineKeyboardMarkup([
                 app.BuildKeyboard(
                     (
