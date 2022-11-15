@@ -71,12 +71,14 @@ async def inline_result(_, inline_query):
                 description="Menu Help Kamu.",
                 caption=app.home_tab_string(),
                 reply_markup=InlineKeyboardMarkup(
-                    [
+                   [
                         app.BuildKeyboard(
                             (
+                                [f"{emoji} Settings {emoji}", "settings-tab"],
                                 [f"{emoji} Plugins {emoji}", "plugins-tab"]
                             )
                         ),
+                        app.BuildKeyboard(([["Support", "support"]])),
                         app.BuildKeyboard(([["Close", "close-tab"]]))
                     ]
                 )
