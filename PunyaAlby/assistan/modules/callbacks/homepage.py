@@ -24,10 +24,11 @@ async def _start(_, cb: CallbackQuery):
         reply_markup=InlineKeyboardMarkup([
                 app.BuildKeyboard(
                     (
-                        ["• Settings •", "plugins-tab"]
+                        ["• Settings •", "settings-tab"]
                         ["• Plugins •", "plugins-tab"]
                     )
                 ),
+                app.BuildKeyboard(([["Support", "support"]])),
                 app.BuildKeyboard(([["Close", "close-tab"]]))
         ]
         ),
