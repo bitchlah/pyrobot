@@ -27,7 +27,6 @@ COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", ". ! /").split())
 CMD_HANDLER = getenv("CMD_HANDLER", ".")
 PMPERMIT_PIC = getenv("PMPERMIT_PIC", None)
 PM_AUTO_BAN = strtobool(getenv("PM_AUTO_BAN", "True"))
-MONGO_DB_URL = getenv("MONGO_DB_URL", "")
 OWNER_ID = list(map(int, getenv("OWNER_ID", "5336023580").split()))
 BOT_VER = "0.1.0@main"
 BOTLOG_CHATID = int(getenv("BOTLOG_CHATID", ""))
