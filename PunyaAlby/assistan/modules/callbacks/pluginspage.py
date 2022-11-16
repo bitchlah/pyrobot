@@ -20,7 +20,7 @@ from PunyaAlby import app
 @app.bot.on_callback_query(filters.regex("plugins-tab"))
 @app.alert_user
 async def plugins_page(_, cb: CallbackQuery):
-    btn = app.HelpDex(0, app.CMD_HELP, "navigate")
+    btn = app.HelpDex(0, HELPABLE[module].__MODULE__, "navigate")
     await cb.edit_message_text(
         text=app.plugin_tab_string(),
         reply_markup=InlineKeyboardMarkup(btn)
@@ -32,7 +32,7 @@ async def plugins_page(_, cb: CallbackQuery):
 @app.alert_user
 async def give_next_page(_, cb: CallbackQuery):
     current_page_number = int(cb.matches[0].group(1))
-    btn = app.HelpDex(current_page_number + 1, app.CMD_HELP, "navigate")
+    btn = app.HelpDex(current_page_number + 1, HELPABLE[module].__MODULE__, "navigate")
     print(cb.matches[0])
     print(dir(cb.matches[0]))
     await cb.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(btn))
@@ -43,7 +43,7 @@ async def give_next_page(_, cb: CallbackQuery):
 @app.alert_user
 async def give_old_page(_, cb: CallbackQuery):
     current_page_number = int(cb.matches[0].group(1))
-    btn = app.HelpDex(current_page_number - 1, app.CMD_HELP, "navigate")
+    btn = app.HelpDex(current_page_number - 1, HELPABLE[module].__MODULE__, "navigate")
     await cb.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(btn))
 
 
@@ -52,7 +52,7 @@ async def give_old_page(_, cb: CallbackQuery):
 @app.alert_user
 async def get_back(_, cb: CallbackQuery):
     page_number = int(cb.matches[0].group(1))
-    btn = app.HelpDex(page_number, app.CMD_HELP, "navigate")
+    btn = app.HelpDex(page_number, HELPABLE[module].__MODULE__, "navigate")
     await cb.edit_message_text(text=app.plugin_tab_string(), reply_markup=InlineKeyboardMarkup(btn))
 
 
